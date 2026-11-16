@@ -1,0 +1,165 @@
+/* The app tour on the home page: ten short scenes built from HTML and CSS (no video file, no library).
+   Each scene animates by itself when it is shown (the .on class). With "reduce motion" nothing moves: every
+   scene shows its final state. */
+
+.hero-grid > * { min-width: 0; }
+.phone-stage { min-width: 0; }
+.tour { display: grid; justify-items: center; gap: 14px; width: 100%; min-width: 0; }
+.tour > * { min-width: 0; max-width: 100%; }
+.tour .phone { width: min(300px, 78vw); }
+
+/* One scene at a time. Without JavaScript the first one is shown. */
+.scene { position: absolute; inset: 0; padding: 40px 14px 64px; display: none; flex-direction: column; gap: 10px; font-size: 12.5px; }
+.scene.on { display: flex; }
+.tour:not([data-js]) .scene:first-child { display: flex; }
+.scene > * { animation: rise .45s ease both; }
+.scene > :nth-child(2) { animation-delay: .06s; }
+.scene > :nth-child(3) { animation-delay: .12s; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes pop { from { opacity: 0; transform: scale(.92); } }
+@keyframes fade { from { opacity: 0; } }
+
+.scene b { font-weight: 800; }
+.tag { display: inline-block; font-size: 9px; font-weight: 900; letter-spacing: .06em; padding: 2px 7px; border-radius: 999px; background: rgba(139, 124, 246, .22); color: #cfc7ff; margin-bottom: 5px; }
+
+/* 1. Lessons */
+.analogy { border-color: rgba(139, 124, 246, .45); background: rgba(139, 124, 246, .1); line-height: 1.5; }
+.scene .opt { animation: rise .4s ease both; }
+.scene .opt.ok { animation: rise .4s ease both, pick 6s 2.4s both; }
+@keyframes pick { 0%, 8% { border-color: var(--line); background: rgba(255, 255, 255, .05); } 14%, 100% { border-color: var(--mint); background: rgba(61, 220, 151, .14); } }
+.good { color: var(--mint); font-weight: 800; animation: pop .35s 3s ease both; }
+
+/* 2. Hands-on: a board of switches and a score that follows them */
+.togs { display: grid; gap: 7px; }
+.tog { display: flex; align-items: center; justify-content: space-between; gap: 8px; line-height: 1.3; }
+.sw { position: relative; width: 34px; height: 19px; border-radius: 999px; background: #2a3556; flex: none; animation: swon .35s both; }
+.sw::after { content: ""; position: absolute; top: 2px; left: 2px; width: 15px; height: 15px; border-radius: 50%; background: #cfd8ee; animation: knob .35s both; }
+.t1 .sw, .t1 .sw::after { animation-delay: 1s; } .t2 .sw, .t2 .sw::after { animation-delay: 2s; }
+.t3 .sw, .t3 .sw::after { animation-delay: 3s; } .t4 .sw, .t4 .sw::after { animation-delay: 4s; }
+@keyframes swon { to { background: var(--mint); } }
+@keyframes knob { to { transform: translateX(15px); background: #06251a; } }
+.meter { display: grid; gap: 6px; }
+.track { height: 9px; border-radius: 99px; background: #1c2747; overflow: hidden; }
+.track span { display: block; height: 100%; width: 100%; border-radius: 99px; background: var(--mint); animation: fill 6s steps(1, end) both; transform-origin: left; }
+@keyframes fill {
+  0% { width: 20%; background: #ff6b6b; } 15% { width: 40%; background: var(--amber); } 32% { width: 60%; background: var(--amber); }
+  48% { width: 80%; background: var(--mint); } 65%, 100% { width: 100%; background: var(--mint); }
+}
+.sc { display: flex; justify-content: space-between; align-items: baseline; }
+.sc em { font-style: normal; font-weight: 900; font-size: 15px; color: var(--mint); animation: pop .3s 4.9s both; }
+
+/* 3. Code */
+.scene .code { animation: rise .45s ease both; }
+.chk { animation: fade .3s both; }
+.chk:nth-of-type(1) { animation-delay: 1.4s; } .chk:nth-of-type(2) { animation-delay: 2.2s; } .chk:nth-of-type(3) { animation-delay: 3s; }
+
+/* 4. Terminal */
+.term { background: #05080f; border: 1px solid #1c2747; border-radius: 12px; padding: 10px; font-family: ui-monospace, Consolas, monospace; font-size: 10.5px; line-height: 1.7; color: #d6e2ff; min-height: 150px; }
+.term .ln { display: block; overflow: hidden; white-space: nowrap; max-width: 0; visibility: hidden; animation: type .8s steps(30, end) forwards, show 0s forwards; }
+.term .ln b { color: var(--mint); margin-right: 6px; }
+.term .out { color: #9fb0d4; }
+.term .win { color: var(--mint); font-weight: 800; }
+.term .l1 { animation-delay: .4s; } .term .l2 { animation-delay: 1.5s; } .term .l3 { animation-delay: 2.5s; }
+.term .l4 { animation-delay: 3.1s; } .term .l5 { animation-delay: 4.1s; } .term .l6 { animation-delay: 5s; }
+@keyframes type { to { max-width: 100%; } }
+@keyframes show { to { visibility: visible; } }
+
+/* 5. Trail */
+.scene .trail { height: 215px; }
+.mark { transform-box: fill-box; transform-origin: center; animation: hop 5s ease-in-out infinite; }
+@keyframes hop { 0% { transform: translate(0, 0); } 50% { transform: translate(18px, -40px); } 100% { transform: translate(0, 0); } }
+.pulse { fill: none; stroke: #22e3ff; stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: ping 1.6s ease-out infinite; }
+@keyframes ping { from { opacity: .9; transform: scale(.6); } to { opacity: 0; transform: scale(2.2); } }
+.coin-pop { display: inline-block; font-weight: 900; color: #ffd166; animation: pop .4s 2.6s both; }
+
+/* 6. Phone checks */
+.chrow { display: flex; align-items: center; gap: 8px; animation: rise .4s ease both; }
+.chrow:nth-of-type(2) { animation-delay: .5s; } .chrow:nth-of-type(3) { animation-delay: 1s; } .chrow:nth-of-type(4) { animation-delay: 1.5s; }
+.open-btn { margin-left: auto; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 999px; background: rgba(255, 176, 32, .18); color: var(--amber); }
+
+/* 7. CyberAi */
+.chat-head { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 14px; }
+.aidisc { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #0c3a7a; color: #aee3ff; font-size: 9px; font-weight: 900; box-shadow: inset 0 0 0 1.5px #2d7fe0; }
+.bub { max-width: 88%; padding: 8px 10px; border-radius: 14px; line-height: 1.45; }
+.bub.me { align-self: flex-end; background: rgba(34, 227, 255, .16); border: 1px solid rgba(34, 227, 255, .35); animation-delay: .3s; }
+.bub.ai { background: var(--panel-2); border: 1px solid var(--line); animation-delay: 1.3s; }
+.bub.ai ul { margin: 4px 0 0; padding-left: 16px; }
+.bub.ai li { animation: fade .3s both; }
+.bub.ai li:nth-child(1) { animation-delay: 2s; } .bub.ai li:nth-child(2) { animation-delay: 2.7s; } .bub.ai li:nth-child(3) { animation-delay: 3.4s; }
+.msgbar { margin-top: auto; display: flex; align-items: center; gap: 8px; padding: 5px; border: 1px solid var(--line); border-radius: 999px; background: #0d1530; }
+.model { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 2px; border-radius: 999px; background: rgba(34, 227, 255, .1); font-weight: 800; }
+.ringbox { position: relative; width: 30px; height: 30px; display: grid; place-items: center; }
+.ringbox svg { position: absolute; inset: 0; transform: rotate(-90deg); }
+.ringbox .trk { fill: none; stroke: #26335c; stroke-width: 3; }
+.ringbox .arc { fill: none; stroke: var(--mint); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 81.7; stroke-dashoffset: 0; animation: drain 6s ease both; }
+@keyframes drain { 0%, 45% { stroke-dashoffset: 0; } 60%, 100% { stroke-dashoffset: 14; } }
+.ringbox .aidisc { width: 20px; height: 20px; font-size: 7px; }
+.msgbar .hint { color: #6f80a8; font-size: 11px; }
+
+/* 8. Live threat browser (Cases) */
+.chips { display: flex; gap: 6px; }
+.chips span { padding: 3px 9px; border-radius: 999px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); font-weight: 700; font-size: 10.5px; }
+.chips .sel { background: rgba(139, 124, 246, .3); border-color: rgba(139, 124, 246, .6); color: #e7e2ff; }
+.news { display: grid; gap: 4px; }
+.news .src { font-size: 10px; color: var(--muted); }
+.news .t { font-weight: 800; line-height: 1.3; }
+.news .learn { justify-self: start; margin-top: 3px; padding: 3px 9px; border-radius: 999px; background: rgba(139, 124, 246, .2); color: #d6d0ff; font-weight: 800; font-size: 10px; }
+.scene .news:nth-of-type(1) { animation-delay: .2s; } .scene .news:nth-of-type(2) { animation-delay: .8s; } .scene .news:nth-of-type(3) { animation-delay: 1.4s; }
+.react { display: flex; gap: 6px; font-size: 10px; color: var(--muted); }
+.react span { padding: 2px 7px; border-radius: 999px; border: 1px solid var(--line); }
+.react .mine { border-color: var(--amber); color: var(--amber); }
+
+/* 9. Coins */
+.purse { display: flex; align-items: center; justify-content: space-between; }
+.coin { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255, 176, 32, .5); background: rgba(255, 176, 32, .1); font-weight: 900; font-size: 15px; color: #ffd166; }
+.coin i { width: 16px; height: 16px; border-radius: 50%; background: #ffb020; box-shadow: inset 0 0 0 3px #ffd166; display: inline-block; }
+.gift { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.gift .go { padding: 4px 11px; border-radius: 999px; background: var(--mint); color: #05241a; font-weight: 900; font-size: 10.5px; animation: pop .35s 1.6s both; }
+.vault b { color: #ffd166; }
+.streak { display: flex; gap: 5px; margin-top: 6px; }
+.streak i { flex: 1; height: 8px; border-radius: 99px; background: #26335c; animation: pop .3s both; }
+.streak i.on { background: var(--mint); }
+.streak i:nth-child(1) { animation-delay: .2s; } .streak i:nth-child(2) { animation-delay: .35s; } .streak i:nth-child(3) { animation-delay: .5s; }
+.streak i:nth-child(4) { animation-delay: .65s; } .streak i:nth-child(5) { animation-delay: .8s; } .streak i:nth-child(6) { animation-delay: .95s; }
+.streak i:nth-child(7) { animation-delay: 1.1s; }
+
+/* 10. Languages */
+.langs { position: relative; min-height: 150px; }
+.lg { position: absolute; inset: 0; opacity: 0; animation: lang 6s infinite; }
+.lg:nth-child(2) { animation-delay: 1.5s; } .lg:nth-child(3) { animation-delay: 3s; } .lg:nth-child(4) { animation-delay: 4.5s; }
+@keyframes lang { 0%, 2% { opacity: 0; transform: translateY(6px); } 5%, 23% { opacity: 1; transform: none; } 26%, 100% { opacity: 0; } }
+.lg .flag { display: inline-block; font-size: 10px; font-weight: 900; padding: 2px 8px; border-radius: 999px; background: rgba(34, 227, 255, .16); color: var(--teal); margin-bottom: 6px; }
+.lg[dir="rtl"] { text-align: right; }
+
+/* The controls under the phone */
+.tour-bar { display: flex; align-items: center; gap: 8px; width: min(440px, 100%); }
+.tour-play { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--text); cursor: pointer; display: grid; place-items: center; }
+.tour-play:hover { background: var(--panel-2); }
+.tour-play svg { width: 14px; height: 14px; }
+.tour-tabs { flex: 1; min-width: 0; display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x proximity; padding: 2px; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent); mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent); }
+.tour-tabs::-webkit-scrollbar { display: none; }
+.tour-tab { position: relative; flex: none; scroll-snap-align: center; display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); font: 700 12.5px/1 inherit; cursor: pointer; overflow: hidden; }
+.tour-tab:hover { color: var(--text); }
+.tour-tab.on { color: var(--text); border-color: rgba(34, 227, 255, .55); background: rgba(34, 227, 255, .1); }
+.tour-tab .tp { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--teal); }
+.tour[data-playing] .tour-tab.on .tp { animation: prog var(--scene-ms, 6s) linear forwards; }
+@keyframes prog { to { width: 100%; } }
+.tour-caption { text-align: center; color: var(--muted); font-size: 14px; min-height: 22px; margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .scene > *, .scene .opt, .scene .opt.ok, .good, .sw, .sw::after, .track span, .sc em, .chk, .term .ln, .mark, .pulse,
+  .coin-pop, .chrow, .bub.ai li, .ringbox .arc, .gift .go, .streak i, .lg, .tour-tab .tp { animation: none !important; }
+  .term .ln { visibility: visible; max-width: 100%; }
+  .sw { background: var(--mint); } .sw::after { transform: translateX(15px); background: #06251a; }
+  .scene .opt.ok { border-color: var(--mint); background: rgba(61, 220, 151, .14); }
+  .lg { position: static; opacity: 1; margin-bottom: 8px; } .langs { min-height: 0; }
+  .tour-tab .tp { display: none; }
+}
+
+/* The app's own bottom bar: the scene says which tab of the app it belongs to. */
+.appnav { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; display: flex; justify-content: space-around; align-items: center; padding: 0 6px; background: #0a1022; border-top: 1px solid var(--line); z-index: 4; }
+.appnav span { display: grid; justify-items: center; gap: 2px; min-width: 46px; padding: 5px 0; border-radius: 12px; font-size: 8.5px; font-weight: 800; color: #6f80a8; transition: background .25s, color .25s; }
+.appnav svg { width: 17px; height: 17px; }
+.phone[data-nav="home"] .appnav [data-nav="home"], .phone[data-nav="learn"] .appnav [data-nav="learn"],
+.phone[data-nav="terminal"] .appnav [data-nav="terminal"], .phone[data-nav="actions"] .appnav [data-nav="actions"],
+.phone[data-nav="cases"] .appnav [data-nav="cases"] { background: rgba(34, 227, 255, .14); color: var(--teal); }
