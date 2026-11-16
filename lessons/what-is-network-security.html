@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is Network Security?: a free lesson | Cybersec Protocol</title>
+  <meta name="description" content="Every time your phone loads a webpage, sends a message, or checks the weather, your data leaves your device and travels through equipment you don&#x27;t own...">
+  <meta name="theme-color" content="#070b1a">
+  <link rel="canonical" href="https://cybersecprotocol.app/lessons/what-is-network-security.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Cybersec Protocol home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e3ff"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient></defs><path d="M16 2 4 6.5v8.7c0 7.3 5.1 13.4 12 14.8 6.9-1.4 12-7.5 12-14.8V6.5z" fill="url(#g)"/><path d="m10.5 16.2 3.7 3.7 7.5-7.6" fill="none" stroke="#021018" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Cybersec<b>Protocol</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a class="btn btn-primary" href="/download.html">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section>
+  <div class="wrap prose">
+    <p class="muted"><a href="/lessons.html">Free lessons</a> / Network Security</p>
+    <h1>What is Network Security?</h1>
+    <p class="muted">Network Security · about 9 minutes</p>
+    <h2>1. Why networks need protecting</h2>
+<p>Every time your phone loads a webpage, sends a message, or checks the weather, your data leaves your device and travels through equipment you don't own and can't see: your Wi-Fi router, your ISP, undersea cables, and dozens of servers in between. Network security is everything that keeps that journey safe — stopping data from being read, changed, or blocked along the way.</p>
+<aside class="card" style="margin:18px 0"><p><b>Analogy</b></p><p>Think of a network like a city's postal system. Data packets are letters, routers are post offices, and IP addresses are street addresses. Network security is everything that keeps letters from being opened, copied, or swapped with fakes en route — sealed envelopes, ID checks, locked mailboxes.</p></aside>
+<h2>2. The CIA triad</h2>
+<p>Almost every security decision, in every field, traces back to three goals known as the CIA triad:</p>
+<ul><li><b>Confidentiality</b> — only the people who should see data can see it. Broken by eavesdropping, weak encryption, leaked credentials.</li><li><b>Integrity</b> — data arrives exactly as it was sent, unaltered. Broken by tampering, man-in-the-middle attacks, corrupted transmissions.</li><li><b>Availability</b> — systems stay up and reachable for legitimate users. Broken by DDoS attacks, hardware failure, ransomware that locks systems down.</li></ul>
+<p>A good security posture protects all three — optimizing for only one usually breaks another. A network locked down so tightly nothing can get in also stops legitimate users from getting their work done. Security is a balance, not a maximum.</p>
+<pre><code>CONFIDENTIALITY        INTEGRITY              AVAILABILITY
+'Who can read it?'      'Was it changed?'       'Can I reach it?'
+     |                       |                        |
+Encryption            Checksums/hashes         Redundancy,
+Access control         Digital signatures       load balancing,
+                                                DDoS protection</code></pre>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<h2>3. Where attacks actually happen: the attack surface</h2>
+<p>Your 'attack surface' is every point where an attacker could try to get in. On a network, that includes:</p>
+<ul><li><b>Eavesdropping (sniffing)</b> — reading unencrypted traffic as it passes by, like listening in on an unsealed postcard</li><li><b>Man-in-the-middle (MITM)</b> — secretly sitting between two parties and relaying (or altering) their traffic without either side noticing</li><li><b>Denial of Service (DoS/DDoS)</b> — overwhelming a system with traffic so real users can't get through</li><li><b>Malware propagation</b> — worms and ransomware that spread automatically from one networked machine to the next, no human click required</li></ul>
+<p>Notice these map directly onto the CIA triad: sniffing breaks confidentiality, MITM breaks integrity, DoS breaks availability.</p>
+<aside class="card" style="margin:18px 0"><p><b>Real-World</b></p><p>In 2016, the Mirai botnet turned ordinary networked devices — home routers, IP cameras, DVRs — into an army of over 600,000 hijacked machines simply because their owners never changed the factory-default login credentials. Mirai used that army to launch one of the largest DDoS attacks ever recorded, temporarily taking down major sites including Twitter, Netflix, and Reddit. The lesson wasn't a clever exploit — it was that 'admin/admin' left unchanged on a network device is an open door.</p></aside>
+<h2>4. Defense in depth</h2>
+<p>No single tool protects a network. Professionals build overlapping layers, so if one fails, the next one catches the problem — this is called <b>defense in depth</b>. A typical stack looks like:</p>
+<ol><li><b>Perimeter</b> — firewalls filtering what enters/exits the network (Chapter 4)</li><li><b>Transit</b> — encryption like TLS and VPNs protecting data while it moves (Chapter 6)</li><li><b>Detection</b> — monitoring and logging to catch what got through anyway</li><li><b>Access control</b> — least-privilege rules so even a compromised account can't reach everything</li></ol>
+<p>Every chapter in this track is really just one layer of this same stack — by the end, you'll see how they interlock.</p>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<aside class="card" style="margin:18px 0"><p><b>Key Takeaway</b></p><p>Network security protects three things — confidentiality, integrity, and availability — across every hop your data takes. No single tool is enough; real protection comes from layered defenses. Next chapter: how data is actually packaged and addressed for that journey, with TCP/IP and the OSI model.</p></aside>
+    <h2>More in this module, inside the app</h2><ul><li>TCP/IP and the OSI Model</li><li>Ports and Common Protocols</li><li>Firewalls and Packet Filtering</li><li>DNS - The Internet's Phone Book</li><li>VPNs and TLS</li></ul>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-primary" href="/download.html">Continue in the app</a>
+      <a class="btn btn-ghost" href="/quiz.html">Take the free quiz</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+      </div>
+      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is App &amp; Mobile Security?: a free lesson | Cybersec Protocol</title>
+  <meta name="description" content="Everything in Network Security and Defensive Security assumed a fairly clean boundary: your systems on one side, the internet on the other. A phone...">
+  <meta name="theme-color" content="#070b1a">
+  <link rel="canonical" href="https://cybersecprotocol.app/lessons/what-is-app-mobile-security.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Cybersec Protocol home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e3ff"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient></defs><path d="M16 2 4 6.5v8.7c0 7.3 5.1 13.4 12 14.8 6.9-1.4 12-7.5 12-14.8V6.5z" fill="url(#g)"/><path d="m10.5 16.2 3.7 3.7 7.5-7.6" fill="none" stroke="#021018" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Cybersec<b>Protocol</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a class="btn btn-primary" href="/download.html">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section>
+  <div class="wrap prose">
+    <p class="muted"><a href="/lessons.html">Free lessons</a> / App &amp; Mobile Security</p>
+    <h1>What is App &amp; Mobile Security?</h1>
+    <p class="muted">App &amp; Mobile Security · about 8 minutes</p>
+    <h2>1. A fundamentally different battlefield</h2>
+<p>Everything in Network Security and Defensive Security assumed a fairly clean boundary: your systems on one side, the internet on the other. A phone breaks that assumption completely. It’s always on, always connected, carries a camera, microphone, and GPS, mixes deeply personal data with work accounts, and — critically — runs dozens of apps from dozens of unrelated developers, all sharing the exact same device and operating system. App &amp; Mobile Security is what happens when ‘defense in depth’ has to work inside a single pocket-sized battlefield instead of across a whole network.</p>
+<aside class="card" style="margin:18px 0"><p><b></b></p><p>A traditional network is like a city of separate buildings, each with its own security. A smartphone is like an apartment building where every tenant (app) shares the same front door, hallways, and utilities, but is supposed to have a locked door to their own unit. Most of the time that works — but the whole security model depends entirely on those internal locks actually holding.</p></aside>
+<h2>2. The layers of the mobile threat landscape</h2>
+<p>Mobile threats stack up across several distinct layers, and this module will work through them roughly in order:</p>
+<ul><li><b>Device-level</b> — physical loss or theft, unlocked screens</li></ul>
+<ul><li><b>OS-level</b> — jailbreaking/rooting removing built-in protections, outdated OS versions missing security patches</li></ul>
+<ul><li><b>App-level</b> — malicious or poorly-built apps, excessive permissions, insecure data storage (Chapters 2-4)</li></ul>
+<ul><li><b>Network-level</b> — public Wi-Fi interception, insecure app traffic (Chapter 5)</li></ul>
+<ul><li><b>Distribution-level</b> — sideloaded or trojanized apps bypassing app store vetting (Chapter 6)</li></ul>
+<p>Notice this maps directly onto the defense-in-depth concept from Network Security Chapter 1 — just applied to a single device instead of a whole network.</p>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<h2>3. Why the stakes are so high</h2>
+<p>A modern phone typically holds more sensitive personal data than most servers held a decade ago: precise location history, private messages, banking apps, health data, photos, and increasingly, the second factor for logging into everything else. A single compromised device can cascade into every account and service tied to it.</p>
+<pre><code>Device-level  -&gt;  OS-level  -&gt;  App-level  -&gt;  Network-level  -&gt;  Distribution-level
+(lost/stolen)    (jailbreak/    (malicious/     (public Wi-Fi,     (sideloaded/
+                  outdated OS)   over-permissioned  insecure traffic)  trojanized apps)
+                                 apps)</code></pre>
+<aside class="card" style="margin:18px 0"><p><b></b></p><p>Pegasus, spyware developed by the NSO Group, became internationally known after researchers at Citizen Lab and Amnesty International documented its use against journalists, human rights activists, and political dissidents worldwide. What made it especially alarming from a mobile security standpoint was its use of ‘zero-click’ exploits — infections that required no action from the victim at all, not even opening a malicious link, exploiting flaws in how phones processed certain incoming messages or files. Once installed, it could access messages, calls, camera, and microphone, often without any visible sign to the user. It remains one of the most cited examples of just how high the stakes of app and mobile security can climb, well beyond the more everyday risks this module will mostly focus on.</p></aside>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<aside class="card" style="margin:18px 0"><p><b></b></p><p>App and mobile security deals with a fundamentally different battlefield: one shared device running many unrelated apps, with stakes ranging from everyday permission abuse all the way up to sophisticated zero-click spyware like Pegasus. The layers — device, OS, app, network, and distribution — will each get their own chapter. Next chapter: the Permission Model, the foundational system meant to keep all those unrelated apps from stepping on each other in the first place.</p></aside>
+    <h2>More in this module, inside the app</h2><ul><li>The Permission Model</li><li>How Apps Attack Each Other</li><li>Secure Data Storage on Mobile</li><li>Insecure Communication</li><li>App Store Security &amp; Malware</li></ul>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-primary" href="/download.html">Continue in the app</a>
+      <a class="btn btn-ghost" href="/quiz.html">Take the free quiz</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+      </div>
+      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
+  </div>
+</footer>
+</body>
+</html>

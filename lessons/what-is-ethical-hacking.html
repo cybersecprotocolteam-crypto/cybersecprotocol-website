@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is Ethical Hacking?: a free lesson | Cybersec Protocol</title>
+  <meta name="description" content="Ethical hacking is the practice of legally attempting to find and exploit weaknesses in a system, with the owner&#x27;s explicit permission, so those...">
+  <meta name="theme-color" content="#070b1a">
+  <link rel="canonical" href="https://cybersecprotocol.app/lessons/what-is-ethical-hacking.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Cybersec Protocol home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e3ff"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient></defs><path d="M16 2 4 6.5v8.7c0 7.3 5.1 13.4 12 14.8 6.9-1.4 12-7.5 12-14.8V6.5z" fill="url(#g)"/><path d="m10.5 16.2 3.7 3.7 7.5-7.6" fill="none" stroke="#021018" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Cybersec<b>Protocol</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a class="btn btn-primary" href="/download.html">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section>
+  <div class="wrap prose">
+    <p class="muted"><a href="/lessons.html">Free lessons</a> / Ethical Hacking</p>
+    <h1>What is Ethical Hacking?</h1>
+    <p class="muted">Ethical Hacking · about 8 minutes</p>
+    <h2>1. The same skills, a different permission slip</h2>
+<p>Ethical hacking is the practice of legally attempting to find and exploit weaknesses in a system, with the owner's explicit permission, so those weaknesses can be fixed before someone without permission finds them first. The techniques are often identical to what a malicious attacker uses. The entire difference — legally, ethically, professionally — comes down to one thing: <b>authorization</b>.</p>
+<aside class="card" style="margin:18px 0"><p><b>Analogy</b></p><p>A locksmith who tests your front door's lock because you hired them to check your home's security is doing you a favor. A stranger who tests your front door's lock without asking is casing your house — even if their technique and their conclusion ('this lock is weak') are exactly the same. Ethical hacking is the locksmith you hired.</p></aside>
+<h2>2. White hat, black hat, grey hat</h2>
+<p>You'll see these terms constantly in the field:</p>
+<ul><li><b>White hat</b> — hacks with explicit authorization, reports findings responsibly. This is the professional standard.</li><li><b>Black hat</b> — hacks without authorization, for personal gain, damage, or theft. This is what most people picture when they hear 'hacker,' but it's a small (if loud) part of the actual field.</li><li><b>Grey hat</b> — hacks without authorization but without clear malicious intent, often 'to help' or out of curiosity, sometimes disclosing what they find afterward. This sounds harmless, but it's still illegal in most places — good intentions don't grant permission.</li></ul>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<h2>3. Why authorization is everything</h2>
+<p>Before any legitimate engagement, professionals get written authorization defining exactly what's allowed: which systems are in scope, which techniques are permitted, and the time window for testing. This is usually called a <b>rules of engagement</b> document or a signed scope agreement. Without it, even a well-intentioned security test can be legally treated the same as an attack — because from the system owner's side, an unauthorized probe looks identical to a real one until proven otherwise.</p>
+<h2>4. The methodology you'll learn in this module</h2>
+<p>Ethical hacking follows a structured process, and each remaining chapter in this module covers one stage:</p>
+<ol><li><b>Reconnaissance</b> — gathering information about the target before touching it</li><li><b>Scanning &amp; Enumeration</b> — mapping out what's actually running and reachable</li><li><b>Exploitation Fundamentals</b> — understanding how weaknesses actually get leveraged</li><li><b>Maintaining Access &amp; Privilege Escalation</b> — how attackers go from 'in' to 'in control'</li><li><b>Reporting &amp; Responsible Disclosure</b> — turning findings into something the organization can actually fix</li></ol>
+<p>This order matters. Skipping straight to exploitation without proper recon and scanning is how real attackers get caught — and how ethical hackers miss the bigger picture of how a system is actually exposed.</p>
+<pre><code>Recon -&gt; Scanning -&gt; Exploitation -&gt; Maintaining Access -&gt; Reporting
+  |          |             |                |                |
+learn    find what's    prove the        show real-world   fix it, safely
+about    running/open   risk is real      impact (safely)   and responsibly
+the                                                          disclosed
+target</code></pre>
+<aside class="card" style="margin:18px 0"><p><b>Real-World</b></p><p>In 2021, a journalist at the St. Louis Post-Dispatch discovered that a Missouri state government website exposed teachers' Social Security numbers in its publicly viewable page source code — something visible simply by using a browser's 'View Source' feature, not by hacking in any technical sense. The reporter responsibly held the story and privately notified the state before the vulnerability was fixed. Missouri's governor publicly called this 'hacking' and threatened criminal prosecution. No charges were ultimately filed, but the case became a widely cited example of how blurry and risky the line around 'unauthorized access' can be — and why responsible disclosure processes (Chapter 6) exist specifically to protect people who report problems in good faith.</p></aside>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<aside class="card" style="margin:18px 0"><p><b>Key Takeaway</b></p><p>Ethical hacking uses the same techniques as malicious hacking, but authorization — clear, written, scoped permission from the system's owner — is what makes it legal and legitimate. The field follows a structured methodology: recon, scanning, exploitation, maintaining access, and reporting. Next chapter: Reconnaissance, the information-gathering stage that happens before a single system is ever touched.</p></aside>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+    <h2>More in this module, inside the app</h2><ul><li>Reconnaissance</li><li>Scanning &amp; Enumeration</li><li>Exploitation Fundamentals</li><li>Maintaining Access &amp; Privilege Escalation</li><li>Reporting &amp; Responsible Disclosure</li></ul>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-primary" href="/download.html">Continue in the app</a>
+      <a class="btn btn-ghost" href="/quiz.html">Take the free quiz</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+      </div>
+      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is Defensive Security?: a free lesson | Cybersec Protocol</title>
+  <meta name="description" content="Defensive security — often called ‘blue team’ work — is the practice of protecting systems continuously: hardening them before an attack, watching them...">
+  <meta name="theme-color" content="#070b1a">
+  <link rel="canonical" href="https://cybersecprotocol.app/lessons/what-is-defensive-security.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Cybersec Protocol home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e3ff"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient></defs><path d="M16 2 4 6.5v8.7c0 7.3 5.1 13.4 12 14.8 6.9-1.4 12-7.5 12-14.8V6.5z" fill="url(#g)"/><path d="m10.5 16.2 3.7 3.7 7.5-7.6" fill="none" stroke="#021018" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Cybersec<b>Protocol</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a class="btn btn-primary" href="/download.html">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section>
+  <div class="wrap prose">
+    <p class="muted"><a href="/lessons.html">Free lessons</a> / Defensive Security</p>
+    <h1>What is Defensive Security?</h1>
+    <p class="muted">Defensive Security · about 8 minutes</p>
+    <h2>1. The mirror image of everything you just learned</h2>
+<p>Defensive security — often called ‘blue team’ work — is the practice of protecting systems continuously: hardening them before an attack, watching them while nothing seems wrong, and responding fast when something does. Where ethical hacking tests a system’s defenses periodically and under authorization, defensive security lives with those systems every single day. It’s a different rhythm of work, but it draws directly on everything from the last module — you can’t defend against threats you don’t understand.</p>
+<aside class="card" style="margin:18px 0"><p><b></b></p><p>If ethical hacking is a fire inspector who visits once a year to test whether the alarms and exits actually work, defensive security is the building’s full-time facilities team — maintaining those systems every day, watching for smoke, and being the ones who actually respond when an alarm goes off at 3am.</p></aside>
+<h2>2. Why offense and defense need each other</h2>
+<p>The two disciplines aren’t separate worlds — they actively inform each other:</p>
+<ul><li><b>Red team</b> — plays the attacker, finding weaknesses (this was the entire last module)</li></ul>
+<ul><li><b>Blue team</b> — defends, detects, and responds</li></ul>
+<ul><li><b>Purple team</b> — a deliberate collaboration between the two, where red team findings directly shape blue team detection rules, and blue team blind spots directly shape what red team tests next</li></ul>
+<p>Understanding attacker methodology (recon, scanning, exploitation, persistence) is precisely what makes a defender effective — you can’t write a detection rule for a technique you don’t understand, and you can’t harden a system against a weakness category you’ve never studied.</p>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<h2>3. The mindset shift: assume compromise, minimize damage</h2>
+<p>You saw a preview of this in Ethical Hacking’s persistence chapter: mature defensive security doesn’t just try to prevent every possible intrusion — it assumes some will eventually succeed, and focuses heavily on limiting how much damage that intrusion can do and how fast it gets caught. This module will walk through the practical stages of that mindset, in order:</p>
+<ul><li><b>Hardening</b> — reducing what’s exposed and exploitable in the first place</li></ul>
+<ul><li><b>Logging &amp; Monitoring</b> — creating the visibility needed to notice something’s wrong</li></ul>
+<ul><li><b>Detecting Intrusions</b> — turning that visibility into actual alerts</li></ul>
+<ul><li><b>Incident Response</b> — what happens once something is confirmed</li></ul>
+<ul><li><b>Security Operations &amp; Threat Intelligence</b> — how all of this runs continuously, day after day, at scale</li></ul>
+<pre><code>PREVENT                DETECT                  RESPOND
+(Hardening)             (Logging, Monitoring,   (Incident Response)
+  |                      Detecting Intrusions)        |
+Reduce what’s                    |                Contain, recover,
+exposed to begin with    Notice something’s         learn from it
+                              wrong, fast</code></pre>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<aside class="card" style="margin:18px 0"><p><b></b></p><p>In June 2017, the NotPetya ransomware attack crippled shipping giant Maersk within minutes, wiping out roughly 49,000 laptops and thousands of servers, including nearly all of its Active Directory domain controllers — the core system managing logins across the entire company. Maersk was later estimated to have lost around $300 million. The company was able to rebuild its entire global identity system only because one domain controller, in a branch office in Ghana, happened to be offline during a local power outage at the exact moment the malware spread — completely by chance, not by design. It became one of the most cited examples in the field of why redundancy and backup strategy (Chapter 5’s Incident Response) aren’t optional extras, they’re what determines whether a company survives a bad day or doesn’t.</p></aside>
+<p class="muted"><i>Do this part in the app: it is hands-on.</i></p>
+<aside class="card" style="margin:18px 0"><p><b></b></p><p>Defensive security is the continuous, everyday counterpart to ethical hacking’s periodic testing — and understanding attacker methodology is exactly what makes a defender effective, which is why offense and defense inform each other through practices like purple teaming. The ‘assume compromise, minimize damage’ mindset, tragically illustrated by Maersk’s near-total reliance on pure luck, is the thread running through every remaining chapter in this module. Next chapter: Hardening Systems, the first practical layer of actually reducing what’s exposed.</p></aside>
+    <h2>More in this module, inside the app</h2><ul><li>Hardening Systems</li><li>Logging &amp; Monitoring</li><li>Detecting Intrusions</li><li>Incident Response</li><li>Security Operations &amp; Threat Intelligence</li></ul>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn btn-primary" href="/download.html">Continue in the app</a>
+      <a class="btn btn-ghost" href="/quiz.html">Take the free quiz</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+      </div>
+      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
+  </div>
+</footer>
+</body>
+</html>
