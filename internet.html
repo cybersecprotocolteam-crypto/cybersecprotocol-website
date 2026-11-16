@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When the app uses the internet · Cybersec Protocol</title>
+  <meta name="description" content="In plain words: which parts of Cybersec Protocol need a connection, what they contact, what is sent, and how to switch each one off.">
+  <meta name="theme-color" content="#070b1a">
+  <link rel="canonical" href="https://cybersecprotocol.app/internet.html">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="/" aria-label="Cybersec Protocol home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22e3ff"/><stop offset="1" stop-color="#8b7cf6"/></linearGradient></defs><path d="M16 2 4 6.5v8.7c0 7.3 5.1 13.4 12 14.8 6.9-1.4 12-7.5 12-14.8V6.5z" fill="url(#g)"/><path d="m10.5 16.2 3.7 3.7 7.5-7.6" fill="none" stroke="#021018" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Cybersec<b>Protocol</b></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a class="btn btn-primary" href="/download.html">Download</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<section>
+  <div class="wrap prose">
+    <h1>When the app uses the internet</h1>
+    <p class="lead">Most of Cybersec Protocol works with no connection. A few features contact other services. Here is every one of them, in plain words.</p>
+    <p>The app has <b>no analytics</b>, and we do <b>not sell or share your personal data</b>. The services below see only what is written here. For the legal wording, see the <a href="/privacy.html#leave">privacy policy</a>.</p>
+    <div style="overflow-x:auto">
+    <table>
+      <tr><th>Feature</th><th>Needs the internet?</th><th>Who it contacts</th><th>What is sent</th><th>How to switch it off</th></tr>
+<tr><td><b>Lessons, quizzes, hands-on games, the terminal, the code editor, house tasks</b></td><td colspan="4">No. They work offline.</td></tr>
+<tr><td><b>Cases: the news browser</b></td><td>Yes</td><td>The news sites, security feeds (NVD and others) and the pictures of stories</td><td>A normal web request: your phone’s IP address and device type. No account, name or email.</td><td>Do not open Cases. Turn off the daily notification if you do not want a daily news request. Turn off “Story pictures” in Settings → Cases to stop the photos from loading.</td></tr>
+<tr><td><b>Searching in Cases</b></td><td>Yes</td><td>NVD and DuckDuckGo</td><td>The words you search for.</td><td>Do not search.</td></tr>
+<tr><td><b>Videos in lessons and Cases</b></td><td>Yes</td><td>YouTube (Google), through its privacy-enhanced player</td><td>A request to play the video.</td><td>Do not press play.</td></tr>
+<tr><td><b>CyberAi in the cloud (chat, story questions, summaries, house exams, the news quiz)</b></td><td>Yes, and only after you allow it</td><td>Google (the Gemini service)</td><td>The chat: your question, and the lesson title when you ask from a lesson. A story: your question, its headline, the site’s short description and an excerpt; a summary sends the article text. A house: its topic and your answers. The news quiz: the day’s headlines.</td><td>Choose “CyberAi Offline” in the chat, or settings → CyberAi → turn the cloud off. Offline answers stay on your phone.</td></tr>
+<tr><td><b>Saving your chats to your account (optional)</b></td><td>Yes, only if you turn it on</td><td>Google Firebase (database)</td><td>Your CyberAi chats: your questions and its answers. Only you can read them.</td><td>It is off by default. Settings → CyberAi → “Save chats to my account”: turning it off deletes them from your account (they stay on your phone).</td></tr>
+<tr><td><b>Sign-in and your account</b></td><td>Yes, if you make an account</td><td>Google Firebase (sign-in and database)</td><td>Your email, a nickname, your coins and plan, and your reactions. Guests do not need an account.</td><td>Use the app as a guest, or delete your account in Settings (or on the delete-account page).</td></tr>
+<tr><td><b>Buying Elite or coins (website and other-store builds only)</b></td><td>Yes</td><td>Lemon Squeezy, which sells it to you, and our purchase server</td><td>You pay on Lemon Squeezy’s own page: we never see your card. The app sends the licence key and an anonymous holder ID to unlock the purchase.</td><td>Do not buy. The Google Play version sells nothing.</td></tr>
+<tr><td><b>Checking for an app update (the website APK only)</b></td><td>Yes</td><td>Our purchase server (Cloudflare)</td><td>A request for the latest version number.</td><td>Update by hand from the website instead.</td></tr>
+<tr><td><b>Keeping fake copies of the app away</b></td><td>Yes</td><td>Google (App Check)</td><td>A device integrity token.</td><td>It cannot be turned off: it protects the shared database.</td></tr>
+    </table>
+    </div>
+    <p>More on the assistant: <a href="/cyberai.html">What CyberAi does</a>.</p>
+    <h2>What no feature does</h2>
+    <p>The app does not ask for your location, contacts, camera, microphone, photos, call log or SMS. Your lesson progress, your code and your phone checks stay on your phone.</p>
+    <h2>Questions</h2>
+    <p>Write to <a href="mailto:support@cybersecprotocol.app">support@cybersecprotocol.app</a>.</p>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+      </div>
+      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/internet.html">Internet use</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
+  </div>
+</footer>
+</body>
+</html>
