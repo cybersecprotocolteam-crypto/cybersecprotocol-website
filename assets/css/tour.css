@@ -1,4 +1,4 @@
-/* The app tour on the home page: ten short scenes built from HTML and CSS (no video file, no library).
+/* The app tour on the home page: nine short scenes built from HTML and CSS (no video file, no library).
    Each scene animates by itself when it is shown (the .on class). With "reduce motion" nothing moves: every
    scene shows its final state. */
 
@@ -7,6 +7,9 @@
 .tour { display: grid; justify-items: center; gap: 14px; width: 100%; min-width: 0; }
 .tour > * { min-width: 0; max-width: 100%; }
 .tour .phone { width: min(300px, 78vw); }
+/* The phone's screen is dark in both themes: it re-declares the dark colours its content uses. */
+.phone { --bg: #070b1a; --bg-2: #0b1226; --panel: #0f1832; --panel-2: #142042; --line: rgba(160, 190, 255, 0.14);
+  --text: #e8eefc; --muted: #9fb0d4; --teal: #22e3ff; --mint: #3ddc97; --violet: #8b7cf6; --amber: #ffb020; --pink: #ff6b9a; color: var(--text); }
 
 /* One scene at a time. Without JavaScript the first one is shown. */
 .scene { position: absolute; inset: 0; padding: 40px 14px 64px; display: none; flex-direction: column; gap: 10px; font-size: 12.5px; }
@@ -163,3 +166,15 @@
 .phone[data-nav="home"] .appnav [data-nav="home"], .phone[data-nav="learn"] .appnav [data-nav="learn"],
 .phone[data-nav="terminal"] .appnav [data-nav="terminal"], .phone[data-nav="actions"] .appnav [data-nav="actions"],
 .phone[data-nav="cases"] .appnav [data-nav="cases"] { background: rgba(34, 227, 255, .14); color: var(--teal); }
+
+/* The hero's first line is encrypted (AES-256-GCM, in this page), then decrypted for real. */
+.eyebrow-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.eyebrow[data-cipher] { cursor: pointer; }
+.eyebrow.is-cipher .cipher-text { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; letter-spacing: 0.04em; }
+.cipher-sound { flex: none; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--muted); cursor: pointer; display: grid; place-items: center; }
+.cipher-sound:hover, .cipher-sound[aria-pressed="true"] { color: var(--teal); border-color: var(--teal); }
+.cipher-sound svg { width: 17px; height: 17px; }
+.cipher-sound .on { display: none; }
+.cipher-sound[aria-pressed="true"] .on { display: block; }
+.cipher-sound[aria-pressed="true"] .off { display: none; }
+.cipher-meta { margin-top: 8px; min-height: 18px; font: 12px ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: var(--muted); letter-spacing: 0.02em; }
