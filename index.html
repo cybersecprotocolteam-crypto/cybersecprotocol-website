@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cybersec Protocol: learn cybersecurity and code, hands on</title>
-  <meta name="description" content="Cybersec Protocol is an Android app that teaches cybersecurity and programming with interactive lessons, a C code editor, a trail of security houses and real steps to protect your own phone.">
+  <meta name="description" content="Cybersec Protocol is an Android app that teaches cybersecurity and programming with interactive lessons, a C editor, security houses and real phone protection.">
   <meta name="theme-color" content="#070b1a">
+  <script>(function(){try{var t=localStorage.getItem('cp-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='light'?'#f4f7fd':'#070b1a'}catch(e){}})()</script>
   <link rel="canonical" href="https://cybersecprotocol.app/">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <meta property="og:type" content="website">
@@ -38,6 +39,7 @@
       <a href="/about.html">About</a>
       <a class="btn btn-primary" href="/download.html">Download</a>
     </div>
+    <button class="theme-btn" type="button" aria-label="Switch to the light theme" title="Switch between dark and light"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14.5A8.5 8.5 0 0 1 9.5 3a8.5 8.5 0 1 0 11.5 11.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7"/></svg></button>
   </nav>
 </header>
 
@@ -45,7 +47,11 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="eyebrow">● Learn by doing, not by reading</span>
+        <div class="eyebrow-row">
+          <span class="eyebrow" data-cipher="Learn by doing, not by reading" tabindex="0" role="button" aria-label="Learn by doing, not by reading. Press to watch it being encrypted and decrypted again."><span aria-hidden="true">● </span><span class="cipher-text" aria-hidden="true">Learn by doing, not by reading</span></span>
+          <button class="cipher-sound" type="button" aria-pressed="false" aria-label="Sound is off. Turn it on to hear the encryption and replay it."><svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9z"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m16.5 9.5 5 5m0-5-5 5"/></svg><svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 8.5a5 5 0 0 1 0 7M18.6 6a8.6 8.6 0 0 1 0 12"/></svg></button>
+        </div>
+        <div class="cipher-meta" aria-hidden="true">AES-256-GCM</div>
         <h1>Learn cybersecurity and code, <span class="grad">hands on.</span></h1>
         <p class="lead">Interactive lessons, a real C code editor in your pocket, a trail of security houses, and step-by-step help to protect the phone you are holding. Free to start, made to be finished.</p>
         <div class="cta-row">
@@ -61,13 +67,13 @@
         <div class="trust">
           <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>No trackers on this website</span>
           <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Your code runs offline, on your phone</span>
-          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>4 languages</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>No account needed</span>
         </div>
       </div>
 
       <div class="phone-stage">
         <div class="tour" data-tour>
-          <div class="phone" tabindex="0" role="group" aria-roledescription="carousel" aria-label="A tour of the app in ten short scenes: lessons, hands-on boards, the C editor, the terminal course, the Cyber Trail, real phone checks, CyberAi, the live threat browser, coins and four languages. Arrow keys move between scenes.">
+          <div class="phone" tabindex="0" role="group" aria-roledescription="carousel" aria-label="A tour of the app in nine short scenes: lessons, hands-on boards, the C editor, the terminal course, the Cyber Trail, real phone checks, CyberAi, the live threat browser and coins. Arrow keys move between scenes.">
 
             <section class="scene" data-label="Lessons" data-nav="learn" data-icon="📖" data-caption="Short lessons, a picture for every idea and a question to check it">
               <span class="pill">LESSON · IDEA 2 OF 5</span>
@@ -181,18 +187,7 @@
               <div class="scr-sub">Coins are a learning reward: no cash value, never taken for a wrong answer.</div>
             </section>
 
-            <section class="scene" data-label="4 languages" data-nav="home" data-icon="🌍" data-caption="English, Arabic, French and Spanish, right to left included">
-              <span class="pill">4 LANGUAGES</span>
-              <div class="scr-title">Every lesson, in your language</div>
-              <div class="mini-card langs">
-                <div class="lg" lang="en"><span class="flag">ENGLISH</span><br><b>Quick check</b><br>Which traffic may pass through a firewall?</div>
-                <div class="lg" lang="ar" dir="rtl"><span class="flag">العربية</span><br><b>تحقق سريع</b><br>أي حركة مرور يسمح بها الجدار الناري؟</div>
-                <div class="lg" lang="fr"><span class="flag">FRANÇAIS</span><br><b>Vérification rapide</b><br>Quel trafic un pare-feu laisse-t-il passer&#8239;?</div>
-                <div class="lg" lang="es"><span class="flag">ESPAÑOL</span><br><b>Comprobación rápida</b><br>¿Qué tráfico deja pasar un cortafuegos?</div>
-              </div>
-              <div class="scr-sub">Arabic is laid out right to left, the whole screen mirrored.</div>
-            </section>
-            <nav class="appnav" aria-hidden="true">
+<nav class="appnav" aria-hidden="true">
               <span data-nav="home"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 11 12 3l9 8v9h-6v-6H9v6H3z"/></svg>Home</span>
               <span data-nav="learn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 4 2 9l10 5 8-4v6h2V9zM6 13.5V17c0 1.2 3 3 6 3s6-1.8 6-3v-3.5l-6 3z"/></svg>Learn</span>
               <span data-nav="terminal"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3zM7 9l3 3-3 3M12 15h5"/></svg>Terminal</span>
@@ -214,19 +209,8 @@
   <section id="features" class="band">
     <div class="wrap">
       <div class="section-head center">
-        <h2>Everything to go from curious to capable</h2>
-        <p class="muted">Short lessons, real practice and instant feedback, built on what learning research says works: try first, recall often, review a few days later.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="card"><div class="icon" style="background:rgba(34,227,255,.12)">🛡️</div><h3>Cybersecurity, from zero</h3><p>Networks, ethical hacking, defense, mobile and app security, privacy, social engineering, cryptography, OSINT, cloud and careers. Every idea ends with a question.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(139,124,246,.14)">💻</div><h3>Algorithms in C, with an editor</h3><p>Loops, searching, sorting, Big-O, recursion and hashing, written in C. Type your code, press Run, see every check explained in plain words, fix it and run again.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(61,220,151,.12)">🏠</div><h3>The Cyber Trail</h3><p>Sixteen houses along one road: screen lock, updates, passwords, phishing, Wi-Fi, malware and more. Games, an exam, and a coach in each house.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(255,176,32,.12)">📱</div><h3>Protect your real phone</h3><p>Next to each house's offline practice, real steps on your own phone, with checks it can read and buttons straight to the right settings page.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(255,107,154,.12)">⌨️</div><h3>A terminal course</h3><p>Nine units in three levels: find your way, read logs, permissions, processes, networks, hashes, users, then hunt a cryptominer and clean up.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(34,227,255,.12)">📰</div><h3>The live threat browser</h3><p>This week's vulnerabilities and security news from trusted sources, with short summaries and a link from each story to the lesson that explains it.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(139,124,246,.14)">🎛️</div><h3>Hands-on, not just reading</h3><p>Switch boards, sliders, step players and tables you can play with, on mock servers and mock accounts, so an idea becomes something you did.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(34,227,255,.12)">💬</div><h3>CyberAi, your study partner</h3><p>Ask about any lesson or story in simple words. The cloud answers only after you allow it; CyberAi Local answers on your phone and sends nothing. A ring shows today's free answers.</p></article>
-        <article class="card"><div class="icon" style="background:rgba(61,220,151,.12)">🌍</div><h3>Four languages, right to left too</h3><p>English, Arabic, French and Spanish, with every lesson, quiz and house translated and Arabic laid out right to left.</p></article>
+        <h2>What is Cybersec Protocol?</h2>
+        <p class="muted" style="max-width:640px;margin:12px auto 0">An Android app that teaches the basics of cybersecurity and programming in short, hands-on lessons. You answer, practise in safe simulations, and then protect your own phone. It is free to start.</p>
       </div>
     </div>
   </section>
@@ -305,11 +289,11 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
-        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made by a small team.</p>
       </div>
-      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/internet.html">Internet use</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+      <div><p class="foot-h">App</p><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/learn-cybersecurity.html">Learn cybersecurity</a></li><li><a href="/cybersecurity-roadmap.html">Roadmap</a></li><li><a href="/quiz.html">Free quiz</a></li><li><a href="/lessons.html">Free lessons</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><p class="foot-h">Company</p><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><p class="foot-h">Legal</p><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/internet.html">Internet use</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
     </div>
     <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
   </div>

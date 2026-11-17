@@ -6,6 +6,7 @@
   <title>Privacy policy · Cybersec Protocol</title>
   <meta name="description" content="Exactly what Cybersec Protocol collects, what stays on your phone, who we share data with and your rights.">
   <meta name="theme-color" content="#070b1a">
+  <script>(function(){try{var t=localStorage.getItem('cp-theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name=theme-color]');if(m)m.content=t==='light'?'#f4f7fd':'#070b1a'}catch(e){}})()</script>
   <link rel="canonical" href="https://cybersecprotocol.app/privacy.html">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -27,6 +28,7 @@
       <a href="/about.html">About</a>
       <a class="btn btn-primary" href="/download.html">Download</a>
     </div>
+    <button class="theme-btn" type="button" aria-label="Switch to the light theme" title="Switch between dark and light"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14.5A8.5 8.5 0 0 1 9.5 3a8.5 8.5 0 1 0 11.5 11.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M5.3 18.7 7 17M17 7l1.7-1.7"/></svg></button>
   </nav>
 </header>
 
@@ -123,7 +125,7 @@
       </ul>
       <p>The app does not ask for your location, contacts, camera, microphone, photos, call log or SMS.</p>
       <h2 id="website">9. This website</h2>
-      <p>This website sets no cookies, runs no analytics or third-party scripts, and loads no external fonts. It is hosted on GitHub Pages; like every web host, GitHub's servers process your IP address to deliver the pages and protect them, and may keep it briefly in security logs. Links to Discord, Google Play or Lemon Squeezy take you to their own services and policies.</p>
+      <p>This website sets no cookies, runs no analytics or third-party scripts (the only thing it keeps is your light or dark choice, in your own browser's local storage: it is never sent anywhere), and loads no external fonts. It is hosted on GitHub Pages; like every web host, GitHub's servers process your IP address to deliver the pages and protect them, and may keep it briefly in security logs. Links to Discord, Google Play or Lemon Squeezy take you to their own services and policies.</p>
       <h2 id="bases">10. Why we may use your data (legal bases)</h2>
       <ul>
         <li><b>To provide the app and your account</b> (contract): sign-in, syncing your wallet, delivering purchases.</li>
@@ -143,12 +145,12 @@
       <p>Only the service providers named above, each for its own task: Google (Firebase Authentication, Cloud Firestore, App Check, Gemini, Apps Script, YouTube), Cloudflare (purchase server), Lemon Squeezy and Stripe (payments), GitHub (website hosting). We do not sell or rent personal data, and we share it with authorities only when the law requires it.</p>
       <p>These providers may process data outside your country, including in the United States and the European Union, under their own safeguards such as standard contractual clauses.</p>
       <h2 id="rights">13. Your rights</h2>
-      <p>Depending on where you live, including under Algerian Law No. 18-07 on the protection of personal data and the EU General Data Protection Regulation, you can ask to:</p>
+      <p>Depending on where you live, including under the EU General Data Protection Regulation and the data-protection law of your country, you can ask to:</p>
       <ul>
         <li>access the personal data we hold about you and get a copy of it;</li>
         <li>correct it, or delete it (also from the app: Settings &gt; Account &gt; Delete account);</li>
         <li>object to or restrict its use, and withdraw consent at any time;</li>
-        <li>complain to your data-protection authority (in Algeria, the ANPDP).</li>
+        <li>complain to your data-protection authority (the national authority of your country).</li>
       </ul>
       <p>Write to <a href="mailto:support@cybersecprotocol.app">support@cybersecprotocol.app</a>. We answer within 30 days and may ask you to prove the account is yours.</p>
       <h2 id="children">14. Children</h2>
@@ -168,11 +170,11 @@
     <div class="foot-grid">
       <div>
         <a class="brand" href="/"><span>Cybersec<b>Protocol</b></span></a>
-        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made in Algeria for learners everywhere.</p>
+        <p class="muted" style="font-size:14px;max-width:340px">An independent learning app about cybersecurity and code, made by a small team.</p>
       </div>
-      <div><h4>App</h4><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
-      <div><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/internet.html">Internet use</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
+      <div><p class="foot-h">App</p><ul><li><a href="/download.html">Download</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="https://discord.gg/BJmNWwPAj" rel="noopener">Discord</a></li></ul></div>
+      <div><p class="foot-h">Company</p><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/security.html">Report a vulnerability</a></li></ul></div>
+      <div><p class="foot-h">Legal</p><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/internet.html">Internet use</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/refunds.html">Refunds</a></li><li><a href="/delete-account.html">Delete your account</a></li></ul></div>
     </div>
     <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
   </div>
