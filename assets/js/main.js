@@ -19,7 +19,7 @@ const RELEASE = {
 // Checkout links, filled in once the Lemon Squeezy products exist. Empty = "soon".
 const CHECKOUT = {
   elite_month: "", elite_year: "",
-  noads: "", vault_small: "", vault_big: "", vault_mega: "",
+  vault_small: "", vault_big: "", vault_mega: "",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,6 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const open = links.classList.toggle("open");
       btn.setAttribute("aria-expanded", String(open));
     });
+  }
+
+  // Light or dark: the early script in each page's head already set it; this is the button. The choice stays in this
+  // browser only (local storage), never sent anywhere.
+  const themeBtn = document.querySelector(".theme-btn");
+  if (themeBtn) {
+    const apply = (t, save) => {
+      document.documentElement.setAttribute("data-theme", t);
+      const meta = document.querySelector("meta[name=theme-color]");
+      if (meta) meta.content = t === "light" ? "#f4f7fd" : "#070b1a";
+      themeBtn.setAttribute("aria-label", t === "light" ? "Switch to the dark theme" : "Switch to the light theme");
+      if (save) { try { localStorage.setItem("cp-theme", t); } catch (e) { /* private mode: it just will not be remembered */ } }
+    };
+    apply(document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark", false);
+    themeBtn.addEventListener("click", () => apply(document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light", true));
   }
 
   // The year in the footer.
@@ -95,13 +110,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (url) a.href = url;
     else { a.removeAttribute("href"); a.setAttribute("aria-disabled", "true"); a.textContent = "Checkout opens soon"; }
   });
-
-  // The app tour: a caption that follows the screen on show.
-  const caption = document.querySelector("[data-tour-caption]");
-  if (caption && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const texts = JSON.parse(caption.dataset.tourCaption);
-    let i = 0;
-    caption.textContent = texts[0];
-    setInterval(() => { i = (i + 1) % texts.length; caption.textContent = texts[i]; }, 5000);
-  }
 });
