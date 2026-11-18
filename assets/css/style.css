@@ -270,3 +270,10 @@ code, .mono { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, mono
 .status { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; padding: 4px 10px; border-radius: 999px; }
 .status.soon { background: rgba(255, 176, 32, 0.14); color: var(--amber); }
 .status.live { background: rgba(61, 220, 151, 0.14); color: var(--mint); }
+
+/* The Watch page */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 340px)); gap: 24px; margin-top: 18px; }
+.video-card { padding: 14px; }
+.video-card video { display: block; width: 100%; aspect-ratio: 9 / 16; max-height: 560px; border-radius: 14px; background: #000; object-fit: contain; }
+.video-card h2 { font-size: 18px; margin: 14px 4px 6px; }
+.video-card p { margin: 0 4px 6px; font-size: 14px; }
