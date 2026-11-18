@@ -7,11 +7,11 @@ const RELEASE = {
   // Published APK (same site). Leave as is, or point to a GitHub Release asset.
   apk: "/download/cybersec-protocol.apk",
   // Fill these in when the signed APK is published (see the website README).
-  sizeMb: "",
-  sha256: "",
-  certSha256: "",
+  sizeMb: "9.5",
+  sha256: "dcb2e6a8412abd8c70b756f376daa4c8f4445fb37409824fc1ed714eb8dddd62",
+  certSha256: "adcef5eb79e6016ecd49b3510d6d3abbe40556338ef6b6899a9ba79bd8e0370e",
   minAndroid: "Android 8.0 or newer",
-  apkReady: false,
+  apkReady: true,
   play: "https://play.google.com/store/apps/details?id=com.cybersec.protocol",
   playLive: false,
 };
