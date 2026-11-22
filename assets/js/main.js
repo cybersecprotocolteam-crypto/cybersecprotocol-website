@@ -8,7 +8,7 @@ const RELEASE = {
   apk: "/download/cybersec-protocol.apk",
   // Fill these in when the signed APK is published (see the website README).
   sizeMb: "9.5",
-  sha256: "a725a8cc25dd77bc684376093ecd3c162041480fb6f97df8869aee981c041506",
+  sha256: "bd3e0deeb4f289ff06878724dcac51cc4d468afafe378a7b0533218b30e2d06b",
   certSha256: "adcef5eb79e6016ecd49b3510d6d3abbe40556338ef6b6899a9ba79bd8e0370e",
   minAndroid: "Android 8.0 or newer",
   apkReady: true,
@@ -20,6 +20,8 @@ const RELEASE = {
 const CHECKOUT = {
   elite_month: "", elite_year: "",
   vault_small: "", vault_big: "", vault_mega: "",
+  // Support the project (a small thank-you with the Supporter badge): the first thing to open.
+  tip_1: "", tip_2: "", tip_3: "",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -99,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const key = a.dataset.plan + "_" + period;
         const url = CHECKOUT[key];
         if (url) { a.href = url; a.removeAttribute("aria-disabled"); a.textContent = "Get " + a.dataset.label; }
-        else { a.removeAttribute("href"); a.setAttribute("aria-disabled", "true"); a.textContent = "Checkout opens soon"; }
+        else { a.removeAttribute("href"); a.setAttribute("aria-disabled", "true"); a.textContent = "Coming soon"; }
       });
     };
     toggle.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => set(b.dataset.period)));
@@ -108,6 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-offer]").forEach((a) => {
     const url = CHECKOUT[a.dataset.offer];
     if (url) a.href = url;
-    else { a.removeAttribute("href"); a.setAttribute("aria-disabled", "true"); a.textContent = "Checkout opens soon"; }
+    else { a.removeAttribute("href"); a.setAttribute("aria-disabled", "true"); a.textContent = a.dataset.offer.indexOf("tip_") === 0 ? "Opens soon" : "Coming soon"; }
   });
 });

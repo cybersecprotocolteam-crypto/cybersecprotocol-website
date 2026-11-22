@@ -53,17 +53,6 @@
     Object.keys(map).forEach(function (id) { var s = doc.getElementById(id); if (s) spy.observe(s); });
   }
 
-  // ── tilt on the hero phone ──
-  var phone = $(".phone-stage");
-  if (phone && !reduce && matchMedia("(pointer: fine)").matches) {
-    phone.addEventListener("pointermove", function (e) {
-      var r = phone.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      phone.style.transform = "perspective(900px) rotateY(" + x * 8 + "deg) rotateX(" + -y * 6 + "deg)";
-    });
-    phone.addEventListener("pointerleave", function () { phone.style.transform = ""; });
-    phone.classList.add("hero-phone");
-  }
-
   // ── tabs (the playground) ──
   function tabs(root) {
     var ts = $$('[role="tab"]', root), ps = $$(".panel", root);
@@ -220,16 +209,6 @@
       catch (e) { $("#enc-pt").textContent = "Wrong passphrase, or the data was changed: AES-GCM refuses it."; }
     });
     $("#enc-flip").addEventListener("click", function () { if (!packed) { toast("Encrypt something first"); return; } var i = 60 + Math.floor(Math.random() * 10); packed = packed.slice(0, i) + (packed[i] === "0" ? "1" : "0") + packed.slice(i + 1); $("#enc-ct").textContent = packed; toast("One character of the ciphertext changed. Now try Decrypt."); });
-  }
-
-  // ── 7. streak and coins ──
-  var cal = $("#cal");
-  if (cal) {
-    var coins = 5, streak = 0, on = {};
-    for (var d = 1; d <= 14; d++) { (function (d) { var b = el("button", "day", String(d)); b.type = "button"; b.setAttribute("aria-pressed", "false"); b.addEventListener("click", function () { on[d] = !on[d]; b.classList.toggle("on", on[d]); b.setAttribute("aria-pressed", String(on[d])); calc(); }); cal.appendChild(b); })(d); }
-    var cn = $("#coin-n"), sn = $("#streak-n");
-    function calc() { var best = 0, run = 0; for (var i = 1; i <= 14; i++) { if (on[i]) { run++; best = Math.max(best, run); } else run = 0; } var days = Object.keys(on).filter(function (k) { return on[k]; }).length; sn.textContent = best; var c = 5 + days * 2.0; cn.textContent = c.toFixed(2); cn.classList.remove("bump"); void cn.offsetWidth; cn.classList.add("bump"); }
-    calc();
   }
 
   // ── the Cyber Trail map ──

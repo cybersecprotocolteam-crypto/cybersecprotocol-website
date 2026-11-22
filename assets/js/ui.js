@@ -218,3 +218,17 @@
     if (g && e.key.toLowerCase() === "t") { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); g = false; }
   });
 })();
+
+// Tabs on the pages other than home (the system checker on the download page).
+(function () {
+  Array.prototype.slice.call(document.querySelectorAll(".os-tabs")).forEach(function (root) {
+    var ts = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]')), ps = Array.prototype.slice.call(root.querySelectorAll(".panel"));
+    var guess = /Win/.test(navigator.platform) ? 0 : /Android/.test(navigator.userAgent) ? 3 : /Mac/.test(navigator.platform) ? 1 : /Linux|X11/.test(navigator.platform) ? 2 : 0;
+    function pick(i, focus) { ts.forEach(function (t, k) { t.setAttribute("aria-selected", String(k === i)); t.tabIndex = k === i ? 0 : -1; }); ps.forEach(function (p, k) { p.classList.toggle("on", k === i); }); if (focus) ts[i].focus(); }
+    ts.forEach(function (t, i) {
+      t.addEventListener("click", function () { pick(i); });
+      t.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") { e.preventDefault(); pick((i + 1) % ts.length, true); } if (e.key === "ArrowLeft") { e.preventDefault(); pick((i + ts.length - 1) % ts.length, true); } });
+    });
+    pick(guess);
+  });
+})();
