@@ -10,7 +10,9 @@
   <link rel="canonical" href="https://cybersecprotocol.app/download.html">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/ui.css">
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/ui.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -87,8 +89,42 @@
         <code class="hash" data-release="sha256">Published with the first release</code>
         <p class="muted" style="margin:14px 0 10px">SHA-256 of the signing certificate:</p>
         <code class="hash" data-release="cert">Published with the first release</code>
-        <p class="note" style="margin-top:14px">Check on Windows: <code>certutil -hashfile cybersec-protocol.apk SHA256</code><br>On macOS or Linux: <code>shasum -a 256 cybersec-protocol.apk</code></p>
+        <p class="note" style="margin-top:14px">Not sure how? Pick your system below: the steps are short.</p>
       </div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:26px">
+    <div class="card os-tabs" id="check">
+      <h3 style="margin-top:0">Check the file on your system</h3>
+      <p class="muted">Two minutes. If the code you get is the same as the one above (capitals or small letters do not matter), the file is exactly the one we published.</p>
+      <div class="tabs" role="tablist" aria-label="Your system">
+        <button class="tab" role="tab" type="button">Windows</button><button class="tab" role="tab" type="button">macOS</button><button class="tab" role="tab" type="button">Linux</button><button class="tab" role="tab" type="button">Android</button>
+      </div>
+      <div class="panel" role="tabpanel">
+        <ol><li>Open the folder with the downloaded file. Hold <b>Shift</b>, right-click an empty space, and choose <b>Open PowerShell window here</b> (or <b>Open in Terminal</b>).</li><li>Run this, with the real file name:</li></ol>
+        <pre>Get-FileHash .\cybersec-protocol.apk -Algorithm SHA256</pre>
+        <ol start="3"><li>Compare the long code after <b>Hash</b> with the one above.</li></ol>
+      </div>
+      <div class="panel" role="tabpanel">
+        <ol><li>Open <b>Terminal</b> (Spotlight, then type Terminal) and go to the folder: <code>cd ~/Downloads</code></li><li>Run:</li></ol>
+        <pre>shasum -a 256 cybersec-protocol.apk</pre>
+        <ol start="3"><li>Compare the code it prints with the one above.</li></ol>
+      </div>
+      <div class="panel" role="tabpanel">
+        <ol><li>Open a terminal in the folder with the file.</li><li>Run:</li></ol>
+        <pre>sha256sum cybersec-protocol.apk</pre>
+        <ol start="3"><li>Compare the code it prints with the one above.</li></ol>
+      </div>
+      <div class="panel" role="tabpanel">
+        <p>The easiest way is to check the file on a computer before you copy it to the phone (use the other tabs). On the phone itself you need a terminal app:</p>
+        <ol><li>Install a terminal app you trust, for example Termux, from its official page.</li><li>Allow it to read your files, then run (change the path if the file is elsewhere):</li></ol>
+        <pre>sha256sum ~/storage/downloads/cybersec-protocol.apk</pre>
+        <ol start="3"><li>Compare the code with the one above. If it is different, delete the file.</li></ol>
+      </div>
+      <h4 style="margin:22px 0 6px">Who signed it? (optional, a little more technical)</h4>
+      <p class="muted" style="margin:0 0 8px">With the Android SDK build-tools installed, this prints the signing certificate. Its SHA-256 must match the second code above:</p>
+      <pre>apksigner verify --print-certs cybersec-protocol.apk</pre>
+      <p class="note" style="margin-top:12px">If a code does not match: do not install, delete the file, and tell us on <a href="/security.html">the security page</a>. For one more check, compare the code with the one pinned in our Discord community.</p>
     </div>
   </div>
 </section>

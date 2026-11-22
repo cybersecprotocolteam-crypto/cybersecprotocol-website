@@ -17,8 +17,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/tour.css">
+  <link rel="stylesheet" href="/assets/css/ui.css">
   <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/tour.js" defer></script>
+  <script src="/assets/js/ui.js" defer></script>
+  <script src="/assets/js/home.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"MobileApplication","name":"Cybersec Protocol","operatingSystem":"Android","applicationCategory":"EducationalApplication","url":"https://cybersecprotocol.app/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
   </script>
@@ -45,6 +48,7 @@
 
 <main id="main">
   <section class="hero">
+    <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap hero-grid">
       <div>
         <div class="eyebrow-row">
@@ -73,7 +77,7 @@
 
       <div class="phone-stage">
         <div class="tour" data-tour>
-          <div class="phone" tabindex="0" role="group" aria-roledescription="carousel" aria-label="A tour of the app in nine short scenes: lessons, hands-on boards, the C editor, the terminal course, the Cyber Trail, real phone checks, CyberAi, the live threat browser and coins. Arrow keys move between scenes.">
+          <div class="phone" tabindex="0" role="group" aria-roledescription="carousel" aria-label="A tour of the app in eight short scenes: lessons, hands-on boards, the C editor, the terminal course, the Cyber Trail, real phone checks, CyberAi and the live threat browser. Arrow keys move between scenes.">
 
             <section class="scene" data-label="Lessons" data-nav="learn" data-icon="📖" data-caption="Short lessons, a picture for every idea and a question to check it">
               <span class="pill">LESSON · IDEA 2 OF 5</span>
@@ -98,7 +102,7 @@
                 <div class="tog t3"><span>Turn on automatic updates</span><i class="sw"></i></div>
                 <div class="tog t4"><span>Encrypt the disk</span><i class="sw"></i></div>
               </div>
-              <div class="meter"><div class="sc"><b>Security score</b><em>100</em></div><div class="track"><span></span></div></div>
+              <div class="mbar"><div class="sc"><b>Security score</b><em>100</em></div><div class="track"><span></span></div></div>
               <div class="scr-sub">Everything here is a simulation: mock names, nothing real is touched.</div>
             </section>
 
@@ -122,7 +126,7 @@
             <section class="scene" data-label="Terminal" data-nav="terminal" data-icon="⌨️" data-caption="A nine-unit terminal course in a safe simulation">
               <span class="pill">TERMINAL COURSE · UNIT 2</span>
               <div class="scr-title">Find the failed logins</div>
-              <div class="term" aria-hidden="true">
+              <div class="dterm" aria-hidden="true">
                 <span class="ln l1"><b>$</b>cd /var/log</span>
                 <span class="ln l2"><b>$</b>grep -c Failed auth.log</span>
                 <span class="ln l3 out">17</span>
@@ -172,19 +176,10 @@
 
             <section class="scene" data-label="Live threats" data-nav="cases" data-icon="📰" data-caption="This week's threats from trusted sources, each linked to the lesson that explains it">
               <span class="pill">CASES · LIVE THREAT BROWSER</span>
-              <div class="chips"><span class="sel">All</span><span>CVE</span><span>Breaches</span></div>
+              <div class="secnav"><span class="sel">All</span><span>CVE</span><span>Breaches</span></div>
               <div class="mini-card news"><div class="src">NVD · CVE</div><div class="t">Cross-site scripting flaw in a chat plugin</div><span class="learn">Learn it: XSS</span></div>
               <div class="mini-card news"><div class="src">Security news</div><div class="t">Cloud storage left open exposes customer files</div><span class="learn">Learn it: Cloud misconfigurations</span></div>
               <div class="mini-card news"><div class="src">Security news</div><div class="t">Phishing wave imitates parcel delivery</div><div class="react"><span class="mine">Shield 12</span><span>Alarm 5</span></div></div>
-            </section>
-
-            <section class="scene" data-label="Coins" data-nav="home" data-icon="🪙" data-caption="Learn and earn, without gambling: fixed contents, nothing random sold for money">
-              <span class="pill">LEARN AND EARN</span>
-              <div class="purse"><span class="coin"><i></i>10.70</span><span class="scr-sub">Your coins</span></div>
-              <div class="mini-card gift"><span><b>Your daily gift</b><br><span class="scr-sub">A little reward for showing up</span></span><span class="go">Open</span></div>
-              <div class="mini-card vault"><b>Weekly vault</b><br><span class="scr-sub">Fixed contents: you see them before you open it.</span></div>
-              <div class="mini-card"><b>Streak · 7 days</b><div class="streak"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><div class="scr-sub">A freeze keeps it alive on a day you cannot study.</div></div>
-              <div class="scr-sub">Coins are a learning reward: no cash value, never taken for a wrong answer.</div>
             </section>
 
 <nav class="appnav" aria-hidden="true">
@@ -206,57 +201,171 @@
     </div>
   </section>
 
-  <section id="features" class="band">
+  <div class="chips-bar"><nav class="secnav" aria-label="Sections">
+    <a class="chip-link" href="#stats">At a glance</a><a class="chip-link" href="#try">Try it</a><a class="chip-link" href="#trail">The trail</a><a class="chip-link" href="#features">Inside</a><a class="chip-link" href="#how">How it works</a><a class="chip-link" href="#quiz">Quick quiz</a><a class="chip-link" href="#plans">Plans</a><a class="chip-link" href="#privacy">Privacy</a><a class="chip-link" href="#faq">Questions</a>
+  </nav></div>
+
+  <section id="stats" class="band">
     <div class="wrap">
       <div class="section-head center">
         <h2>What is Cybersec Protocol?</h2>
-        <p class="muted" style="max-width:640px;margin:12px auto 0">An Android app that teaches the basics of cybersecurity and programming in short, hands-on lessons. You answer, practise in safe simulations, and then protect your own phone. It is free to start.</p>
+        <p class="muted" style="max-width:660px;margin:12px auto 0">An Android app that teaches the basics of cybersecurity and programming in short, hands-on lessons. You answer, practise in safe simulations, and then protect your own phone. It is free to start.</p>
       </div>
+      <div class="stats">
+        <div class="stat" data-to="74" data-of="80"><div class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><span class="num">0</span></div><p>short lessons</p></div>
+        <div class="stat" data-to="16" data-of="16"><div class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><span class="num">0</span></div><p>houses on the Cyber Trail</p></div>
+        <div class="stat" data-to="104" data-of="120" data-suffix=""><div class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><span class="num">0</span></div><p>real steps for your own phone</p></div>
+        <div class="stat" data-to="0" data-of="1"><div class="ring"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><span class="num">0</span></div><p>trackers on this website</p></div>
+      </div>
+      <div class="marquee" style="margin-top:26px" aria-label="Topics in the app"><div class="marquee-track">
+        <span class="topic">Network security</span><span class="topic">Ethical hacking basics</span><span class="topic">Defense</span><span class="topic">Mobile and app security</span><span class="topic">Privacy</span><span class="topic">Social engineering</span><span class="topic">Cryptography</span><span class="topic">OSINT</span><span class="topic">Cloud</span><span class="topic">Algorithms in C</span><span class="topic">Python</span><span class="topic">Bash and Linux</span><span class="topic">JavaScript</span><span class="topic">SQL</span>
+      </div></div>
     </div>
   </section>
 
-  <section>
+  <section id="try">
     <div class="wrap">
       <div class="section-head">
-        <h2>How it works</h2>
-        <p class="muted">Fifteen minutes a day is enough. Your streak and a daily reminder keep it going.</p>
+        <span class="tag">Try it now</span>
+        <h2>A taste of learning by doing</h2>
+        <p class="muted">Six small pieces that work right here. They run in your browser and send nothing anywhere. The app does each of them properly, with more depth.</p>
       </div>
-      <div class="steps">
-        <div class="card step"><h3>Learn an idea</h3><p>A short card, a diagram or a game: put the steps in order, run a sort, trace code by hand.</p></div>
-        <div class="card step"><h3>Practise it</h3><p>Answer, write code, type terminal commands, or play a house's task. Mistakes are explained, never punished.</p></div>
-        <div class="card step"><h3>Apply it for real</h3><p>Use what you learnt on your own phone and accounts, then come back for the review a few days later.</p></div>
+      <div class="card" data-tabs>
+        <div class="tabs" role="tablist" aria-label="Try the app">
+          <button class="tab" role="tab" type="button">Spot the phish</button><button class="tab" role="tab" type="button">Password lab</button><button class="tab" role="tab" type="button">Link inspector</button><button class="tab" role="tab" type="button">Terminal</button><button class="tab" role="tab" type="button">C editor</button><button class="tab" role="tab" type="button">Encrypt</button>
+        </div>
+
+        <div class="panel" role="tabpanel">
+          <p class="muted" style="margin:0 0 12px">Tap the parts of this email that look suspicious. There are five tricks, and some parts are perfectly normal.</p>
+          <div class="mail" id="mail">
+            <div class="mail-h"><div><b>From:</b> <button class="sus" data-k="from" type="button">MyBank Support &lt;help@mybank-secure-login.example&gt;</button></div><div><b>Subject:</b> <button class="sus" data-k="subject" type="button">URGENT: your account will be closed in 24 hours</button></div></div>
+            <div class="mail-b">
+              <button class="sus" data-k="greet" type="button">Dear customer,</button>
+              <button class="sus" data-k="ok1" type="button">We noticed a sign-in from a new device on 21 November.</button>
+              <span class="btn-fake sus" role="button" tabindex="0" data-k="link" style="cursor:pointer">Confirm my details now</span>
+              <button class="sus" data-k="attach" type="button">📎 account-form.zip (214 KB)</button>
+              <button class="sus" data-k="ok2" type="button">Thank you for banking with us.</button>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap"><b id="mail-score">0 of 5 found</b><div class="mbar" id="mail-meter" style="flex:1;min-width:140px"><i></i></div><button class="pill-btn" id="mail-reset" type="button">Reset</button></div>
+          <div class="note" id="mail-note" hidden></div>
+        </div>
+
+        <div class="panel" role="tabpanel">
+          <p class="muted" style="margin:0 0 12px">Type a password you do NOT use anywhere, or press the button for four random words. It is rated in this page only.</p>
+          <input class="field" id="pw" type="text" autocomplete="off" spellcheck="false" placeholder="Try: Tr0ub4dor&amp;3" aria-label="A password to rate">
+          <div class="mbar" id="pw-meter" style="margin-top:12px"><i></i></div>
+          <div id="pw-out" style="margin-top:6px"></div>
+          <div class="run-row"><button class="pill-btn main" id="pw-gen" type="button">Make four random words</button></div>
+          <p class="muted" style="font-size:12px;margin:12px 0 0">A rough estimate that assumes 10 billion guesses a second. Real attacks differ, and a password manager is better than any single password.</p>
+        </div>
+
+        <div class="panel" role="tabpanel">
+          <p class="muted" style="margin:0 0 12px">Paste a link and see who really owns it. Try the examples.</p>
+          <input class="field" id="lk" type="text" autocomplete="off" spellcheck="false" value="http://secure-login.paypa1.com.account-check.example/verify?id=48213" aria-label="A web address to inspect">
+          <div class="run-row"><button class="pill-btn" data-link="https://github.com/cybersec/protocol" type="button">A normal link</button><button class="pill-btn" data-link="http://192.168.4.20/login" type="button">Numbers only</button><button class="pill-btn" data-link="https://www.google.com@evil.example/signin" type="button">The @ trick</button><button class="pill-btn" data-link="https://xn--pple-43d.example/id" type="button">Punycode</button></div>
+          <div id="lk-out" style="margin-top:12px"></div>
+        </div>
+
+        <div class="panel" role="tabpanel">
+          <div class="term"><div class="term-bar"><i></i><i></i><i></i><span>demo shell: nothing here is real</span></div><div class="term-body" id="term-body" aria-live="polite"></div><label class="term-in"><span class="p">$</span><input id="term-in" type="text" autocomplete="off" spellcheck="false" aria-label="Type a command"></label></div>
+          <div class="run-row"><button class="pill-btn" data-cmd="help" type="button">help</button><button class="pill-btn" data-cmd="ls" type="button">ls</button><button class="pill-btn" data-cmd="cat notes.txt" type="button">cat notes.txt</button><button class="pill-btn main" data-cmd="grep Failed auth.log" type="button">grep Failed auth.log</button><button class="pill-btn" data-cmd="clear" type="button">clear</button></div>
+          <p class="muted" style="font-size:13px;margin:12px 0 0">The app's terminal course has nine units, from finding your way to hunting a cryptominer.</p>
+        </div>
+
+        <div class="panel" role="tabpanel">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px"><label for="c-sel" class="muted">Example</label><select id="c-sel" class="field" style="width:auto;height:40px;font:600 14px inherit"><option value="squares">Squares in a loop</option><option value="sum">Adding an array</option><option value="search">Binary search</option></select><button class="pill-btn main" id="c-run" type="button">Run ▶</button></div>
+          <pre class="srccode" id="c-code" aria-label="C code"></pre>
+          <div class="cout" id="c-out" aria-live="polite"></div>
+          <p class="muted" style="font-size:13px;margin:12px 0 0">A preview with prepared output. In the app you type your own C, press Run, and every check is explained in plain words.</p>
+        </div>
+
+        <div class="panel" role="tabpanel">
+          <p class="muted" style="margin:0 0 12px">Real AES-256-GCM, from your browser's own crypto. The key is made from your passphrase. Change one character of the result and decryption refuses it.</p>
+          <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr" class="enc-in"><input class="field" id="enc-text" type="text" value="Meet me at the library at 5" aria-label="Text to encrypt" style="font-size:15px"><input class="field" id="enc-pass" type="text" value="correct horse battery" aria-label="Passphrase" style="font-size:15px"></div>
+          <div class="run-row"><button class="pill-btn main" id="enc-go" type="button">Encrypt</button><button class="pill-btn" id="enc-back" type="button">Decrypt</button><button class="pill-btn" id="enc-flip" type="button">Tamper with it</button></div>
+          <div class="flow" style="margin-top:14px"><div class="box"><small>Ciphertext (salt, nonce, data)</small><span id="enc-ct">Press Encrypt.</span></div><div class="arrow" aria-hidden="true">→</div><div class="box"><small>Decrypted</small><span id="enc-pt">…</span></div></div>
+          <div class="box" style="margin-top:12px;padding:12px 14px;border:1px solid var(--hair);border-radius:12px;font:12px ui-monospace,Menlo,Consolas,monospace;word-break:break-all"><small style="display:block;font:700 11px inherit;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">SHA-256 of the text</small><span id="enc-h">…</span></div>
+        </div>
+
+</div>
       </div>
     </div>
   </section>
 
-  <section class="band">
-    <div class="wrap grid grid-2" style="align-items:center">
-      <div>
-        <span class="tag">Fair by design</span>
-        <h2>Learn and earn, without gambling</h2>
-        <p class="muted">Coins come from learning: right answers, finished lessons, solved code. A wrong answer never costs you a coin, paid packs always say exactly what is inside, and the free plan gets you through most of the app. Plans add every house and more AI help.</p>
-        <div class="cta-row" style="margin-top:18px"><a class="btn btn-ghost" href="/pricing.html">See the plans</a></div>
-      </div>
-      <div class="card">
-        <h3>Your data, kept small</h3>
-        <ul class="ticks">
-          <li>Use the app as a guest, with no account at all</li>
-          <li>Your code, progress and phone checks stay on your phone</li>
-          <li>The AI is used only after you say yes, and you can say no</li>
-          <li>Delete your account and its data from inside the app</li>
-        </ul>
-        <a href="/privacy.html">Read the privacy policy →</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <section id="trail" class="band">
     <div class="wrap">
-      <div class="section-head center">
-        <h2>Questions people ask</h2>
+      <div class="section-head">
+        <span class="tag">The Cyber Trail</span>
+        <h2>Sixteen houses, one road</h2>
+        <p class="muted">Each house is one way to protect a phone and its owner. Tap a house. In the app each one has games, an exam, a coach and real steps for your own phone.</p>
       </div>
+      <div class="trail-wrap">
+        <div class="trail-map"><svg id="trail-svg" viewBox="0 0 800 640" role="group" aria-label="The Cyber Trail: sixteen houses along a winding road"></svg></div>
+        <aside class="h-card" id="h-card" aria-live="polite"></aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Inside the app</span>
+        <h2>Built to be finished, not just opened</h2>
+      </div>
+      <div class="bento">
+        <article class="tile w4 spot"><h3>Lessons with a question at the end</h3><p class="sub">A short card, a picture or analogy, then a check. Mistakes are explained in plain words, never punished.</p><div class="mini-q"><div class="note" style="margin:0"><b>Quick check</b><br>What does a firewall decide?<br><span class="muted">○ How fast the Wi-Fi is &nbsp; ● Which traffic may pass ✓ &nbsp; ○ Which apps you install</span></div></div></article>
+        <article class="tile w2 spot"><h3>Real phone checks</h3><p class="sub">The app reads a few settings (screen lock, security update, developer options) and opens the right settings page. It never changes anything by itself.</p></article>
+        <article class="tile w2 spot"><h3>A terminal course</h3><p class="sub">Nine units in three levels, on safe mock servers: logs, permissions, processes, networks, hashes, users.</p></article>
+        <article class="tile w2 spot"><h3>Hands-on boards</h3><p class="sub">Switches, sliders, step players and tables you can play with, so an idea becomes something you did.</p></article>
+        <article class="tile w2 spot"><h3>Live threat browser</h3><p class="sub">This week's vulnerabilities and security news from trusted sources, with a link from each story to the lesson that explains it. It loads only after you allow the internet for it.</p></article>
+        <article class="tile w3 spot glow-border"><h3>CyberAi, your study partner</h3><p class="sub">Ask about a lesson or a story in simple words. Cloud answers only after you allow it; CyberAi Local answers on your phone and sends nothing.</p></article>
+        <article class="tile w3 spot"><h3>Fair by design</h3><p class="sub">Coins come from learning. A wrong answer never costs one. Paid packs say exactly what is inside, and nothing random is sold for money.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="band">
+    <div class="wrap" style="max-width:820px">
+      <div class="section-head"><h2>How it works</h2><p class="muted">Fifteen minutes a day is enough. Your streak and a daily reminder keep it going.</p></div>
+      <div class="timeline"><span class="fill"></span>
+        <div class="tl"><h3>1 · Learn an idea</h3><p>A short card, a diagram or a game: put the steps in order, run a sort, trace code by hand.</p></div>
+        <div class="tl"><h3>2 · Practise it</h3><p>Answer, write code, type terminal commands, or play a house's task. Mistakes are explained, never punished.</p></div>
+        <div class="tl"><h3>3 · Apply it for real</h3><p>Use what you learnt on your own phone and accounts, step by step, with checks it can read.</p></div>
+        <div class="tl"><h3>4 · Come back for the review</h3><p>A few days later the ideas return as short questions, so they stay.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz">
+    <div class="wrap" style="max-width:760px">
+      <div class="section-head center"><span class="tag">Quick quiz</span><h2>Three questions, thirty seconds</h2></div>
+      <div class="card" id="qz" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="plans" class="band">
+    <div class="wrap">
+      <div class="section-head center"><h2>Free to start. Elite when you want more.</h2><p class="muted">Every lesson, the first eight houses, the terminal course and the code editor are free to use.</p></div>
+      <div class="grid grid-2" style="max-width:820px;margin:0 auto">
+        <div class="card"><h3>Free</h3><div class="price-big">$0</div><ul class="ticks"><li>Every lesson and the terminal course (paid in coins you earn by learning; an empty purse never blocks one)</li><li>The first eight houses, and the real phone steps of every house</li><li>Coins from learning and a daily gift</li><li>10 cloud AI answers a day</li></ul></div>
+        <div class="card glow-border spot"><h3>Elite</h3><div class="switch" role="group" aria-label="Billing"><button type="button" data-bill="month" aria-pressed="true">Monthly</button><button type="button" data-bill="year" aria-pressed="false">Yearly</button></div><div class="price-big" style="margin-top:12px"><span id="price-n">$5</span> <small id="price-per">/ month</small></div><p class="muted" id="price-save" style="margin:6px 0 10px;font-size:14px">Cancel any time; you keep access until the period ends.</p><ul class="ticks"><li>All 16 houses and their exams (without a plan, Elite houses can also be unlocked with 7.5 coins)</li><li>100 cloud AI answers a day</li><li>100 coins a month</li></ul><a class="btn btn-primary" href="/pricing.html" style="margin-top:8px">See the plans</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap grid grid-2" style="align-items:center">
+      <div><span class="tag">Privacy</span><h2>Your data, kept small</h2><p class="muted">The app is built so most of what you do never leaves your phone. The details are written down in plain words, not hidden in a long policy.</p><a href="/privacy.html">Read the privacy policy →</a></div>
+      <div class="card"><ul class="ticks"><li>Use the app as a guest, with no account at all</li><li>Your code, progress and phone checks stay on your phone</li><li>The AI is used only after you say yes, and you can say no</li><li>News loads only after you allow the internet for it</li><li>Delete your account and its data from inside the app</li></ul></div>
+    </div>
+  </section>
+
+  <section id="faq" class="band">
+    <div class="wrap">
+      <div class="section-head center"><h2>Questions people ask</h2></div>
       <div style="max-width:760px;margin:0 auto">
-        <details><summary>Is it really free?</summary><p>Yes. Most lessons, the first eight houses, the terminal course and the code editor are free. The Elite plan unlocks the other houses (the first task of each is free to try) and gives more AI answers a day.</p></details>
+        <details><summary>Is it really free?</summary><p>Yes. Every lesson, the first eight houses, the terminal course and the code editor are free to use. The Elite plan unlocks the other houses (the first task of each is free to try, or you can unlock one with 7.5 coins you earned) and gives more AI answers a day.</p></details>
         <details><summary>Do I need to know anything first?</summary><p>No. The lessons start from zero, and the Algorithms module teaches C from the first line.</p></details>
         <details><summary>Does it teach hacking?</summary><p>It teaches how attacks work so you can defend against them, always with permission and the law in mind. Practice happens in safe simulations, never on real systems.</p></details>
         <details><summary>Google Play or APK?</summary><p>Google Play is the easiest and updates by itself. The APK is for people without Google Play: the same lessons and labs as a separate install; check its fingerprint on the download page before installing.</p></details>
@@ -268,17 +377,19 @@
   <section>
     <div class="wrap center">
       <h2>Coming soon: Code Lab</h2>
-      <p class="muted" style="max-width:640px;margin:0 auto">A separate, free and open-source code app that works fully offline, with several programming languages and no account. When a lesson in Cybersec Protocol reaches a practice, it can offer to open Code Lab, and you never have to install it. It is still being built.</p>
+      <p class="muted" style="max-width:640px;margin:0 auto">A separate, free and open-source code app that is meant to work fully offline, with several programming languages and no account. When a lesson in Cybersec Protocol reaches a practice, it can offer to open Code Lab, and you never have to install it. It is still being built.</p>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap center">
-      <h2>Start your first lesson today</h2>
-      <p class="muted" style="max-width:560px;margin:0 auto 22px">Join the community on Discord to ask questions, share your streak and suggest the next lesson.</p>
-      <div class="cta-row" style="justify-content:center">
-        <a class="btn btn-primary" href="/download.html">Download the app</a>
-        <a class="btn btn-ghost" href="https://discord.gg/BJmNWwPAj" rel="noopener">Join the Discord</a>
+      <div class="card glow-border spot" style="max-width:720px;margin:0 auto;padding:34px 24px">
+        <h2 style="margin-top:0">Start your first lesson today</h2>
+        <p class="muted" style="max-width:520px;margin:0 auto 22px">Join the community on Discord to ask questions, share your streak and suggest the next lesson.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn btn-primary" href="/download.html">Download the app</a>
+          <a class="btn btn-ghost" href="https://discord.gg/BJmNWwPAj" rel="noopener">Join the Discord</a>
+        </div>
       </div>
     </div>
   </section>
@@ -298,5 +409,6 @@
     <div class="copy"><span>© <span data-year>2026</span> Cybersec Protocol</span><span>No cookies. No trackers. Just a website.</span></div>
   </div>
 </footer>
+<div class="mobile-bar" aria-hidden="false"><span><b>Cybersec Protocol</b><br><small class="muted">Free to start</small></span><a class="btn btn-primary" href="/download.html">Download</a></div>
 </body>
 </html>
