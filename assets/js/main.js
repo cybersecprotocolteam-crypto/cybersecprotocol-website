@@ -8,7 +8,7 @@ const RELEASE = {
   apk: "/download/cybersec-protocol.apk",
   // Fill these in when the signed APK is published (see the website README).
   sizeMb: "9.5",
-  sha256: "bd3e0deeb4f289ff06878724dcac51cc4d468afafe378a7b0533218b30e2d06b",
+  sha256: "40b94e503b19d754c48114bf82e2046f8428301a7894a83e3cc2277d06038974",
   certSha256: "adcef5eb79e6016ecd49b3510d6d3abbe40556338ef6b6899a9ba79bd8e0370e",
   minAndroid: "Android 8.0 or newer",
   apkReady: true,
