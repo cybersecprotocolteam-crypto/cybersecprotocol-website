@@ -10,7 +10,9 @@
   <link rel="canonical" href="https://cybersecprotocol.app/privacy.html">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/ui.css">
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/ui.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -63,7 +65,7 @@
       <h2 id="summary">1. The short version</h2>
       <ul>
         <li>You can use the app as a guest, with no account and no email.</li>
-        <li>Your lesson progress, your code, your notes and the results of the phone checks stay on your phone.</li>
+        <li>Your code, your notes and the results of the phone checks stay on your phone. Your lesson progress stays on your phone too, unless you have a verified account: then your progress (lessons, streak, XP, module quizzes, Action Houses, terminal path) is also kept with the account, so a new phone gets it back.</li>
         <li>Something leaves your phone only when you use a feature that needs it, and this page lists every one of them.</li>
         <li>We do not sell your data, and this website uses no cookies and no analytics.</li>
         <li>You can delete your account and its data from inside the app.</li>
@@ -105,12 +107,13 @@
       <p>Only when you use the feature. In plain words, with how to switch each one off: <a href="/internet.html">When the app uses the internet</a>.</p>
       <table>
         <tr><th>Feature</th><th>What is sent</th><th>To whom</th></tr>
-        <tr><td>CyberAi coach, AI summaries, AI quiz of the day (only after you agree to cloud AI)</td><td>In the chat: your question, and the lesson title when you ask from a lesson. In a story: your question, its headline, the site’s short description and a short excerpt (a summary sends the article text). In a house: its topic and your answers. In the news quiz: the day’s headlines.</td><td>Google (Gemini API, through Firebase AI Logic or Google AI Studio). On Google's free tier, content may be used by Google to improve its products. Never type passwords, codes or personal data.</td></tr>
+        <tr><td>CyberAi coach, AI summaries, AI quiz of the day (only after you agree to cloud AI)</td><td>In the chat: your question, and the lesson title when you ask from a lesson. In a story: your question, its headline, the site’s short description and a short excerpt (a summary sends the article text). In a house: its topic and your answers. In the news quiz: the day’s headlines.</td><td>Google (Gemini API, through Firebase AI Logic or Google AI Studio). Google may use the content to improve its products. Never type passwords, codes or personal data.</td></tr>
         <tr><td>News and vulnerability feeds, story pictures</td><td>A normal web request (your IP address, device type)</td><td>The publishers of the feeds, NVD (NIST), Wikipedia and the news sites</td></tr>
         <tr><td>Live search in the news browser</td><td>The words you search for</td><td>NVD and DuckDuckGo</td></tr>
         <tr><td>Lesson videos</td><td>A request to play the video</td><td>YouTube (Google), through its privacy-enhanced youtube-nocookie.com player</td></tr>
         <tr><td>Redeeming a purchase code</td><td>The licence key and an anonymous holder ID (a SHA-256 fingerprint of your account ID, or of a random install ID for guests)</td><td>Our purchase server (Cloudflare Workers), which checks the key with Lemon Squeezy</td></tr>
         <tr><td>Checking for app updates (APK version)</td><td>A request for the latest version number</td><td>Our purchase server (Cloudflare)</td></tr>
+        <tr><td>Crash reports (website and Google Play versions; off until you turn them on in Settings)</td><td>When the app crashes: where it broke (the stack trace), the phone model, the Android and app versions, and a random installation ID. No account, email, name, lesson text or chat is attached.</td><td>Google (Firebase Crashlytics), to find and fix crashes</td></tr>
         <tr><td>App integrity checks</td><td>A device integrity token</td><td>Google (Firebase App Check with Play Integrity), to keep fake clients away from our database</td></tr>
         <tr><td>Daily threat brief notification</td><td>The same news request as the feeds, once a day, if you keep the brief on</td><td>The news publishers</td></tr>
       </table>

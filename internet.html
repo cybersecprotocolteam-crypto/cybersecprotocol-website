@@ -10,7 +10,9 @@
   <link rel="canonical" href="https://cybersecprotocol.app/internet.html">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/ui.css">
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/ui.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -42,20 +44,21 @@
     <table>
       <tr><th>Feature</th><th>Needs the internet?</th><th>Who it contacts</th><th>What is sent</th><th>How to switch it off</th></tr>
 <tr><td><b>Lessons, quizzes, hands-on games, the terminal, the code editor, house tasks</b></td><td colspan="4">No. They work offline.</td></tr>
-<tr><td><b>Cases: the news browser</b></td><td>Yes</td><td>The news sites, security feeds (NVD and others) and the pictures of stories</td><td>A normal web request: your phone’s IP address and device type. No account, name or email.</td><td>Do not open Cases. Turn off the daily notification if you do not want a daily news request. Turn off “Story pictures” in Settings → Cases to stop the photos from loading.</td></tr>
+<tr><td><b>Cases: the news browser, and “What’s new” on Home</b></td><td>Yes, and only after you allow it (a short question the first time Cases opens, or the switch in Settings &gt; Cases). Until then nothing is downloaded for them</td><td>The news sites, security feeds (NVD and others) and the pictures of stories</td><td>A normal web request: your phone’s IP address and device type. No account, name or email.</td><td>Do not open Cases. Turn off the daily notification if you do not want a daily news request. Turn off “Story pictures” in Settings → Cases to stop the photos from loading.</td></tr>
 <tr><td><b>Searching in Cases</b></td><td>Yes</td><td>NVD and DuckDuckGo</td><td>The words you search for.</td><td>Do not search.</td></tr>
 <tr><td><b>Videos in lessons and Cases</b></td><td>Yes</td><td>YouTube (Google), through its privacy-enhanced player</td><td>A request to play the video.</td><td>Do not press play.</td></tr>
 <tr><td><b>CyberAi in the cloud (chat, story questions, summaries, house exams, the news quiz)</b></td><td>Yes, and only after you allow it</td><td>Google (the Gemini service)</td><td>The chat: your question, and the lesson title when you ask from a lesson. A story: your question, its headline, the site’s short description and an excerpt; a summary sends the article text. A house: its topic and your answers. The news quiz: the day’s headlines.</td><td>Choose “CyberAi Offline” in the chat, or settings → CyberAi → turn the cloud off. Offline answers stay on your phone.</td></tr>
 <tr><td><b>Saving your chats to your account (optional)</b></td><td>Yes, only if you turn it on</td><td>Google Firebase (database)</td><td>Your CyberAi chats: your questions and its answers. Only you can read them.</td><td>It is off by default. Settings → CyberAi → “Save chats to my account”: turning it off deletes them from your account (they stay on your phone).</td></tr>
-<tr><td><b>Sign-in and your account</b></td><td>Yes, if you make an account</td><td>Google Firebase (sign-in and database)</td><td>Your email, a nickname, your coins and plan, and your reactions. Guests do not need an account.</td><td>Use the app as a guest, or delete your account in Settings (or on the delete-account page).</td></tr>
+<tr><td><b>Sign-in and your account</b></td><td>Yes, if you make an account</td><td>Google Firebase (sign-in and database)</td><td>Your email, a nickname, your coins and plan, your reactions, and (with a verified account) your learning progress. Guests do not need an account.</td><td>Use the app as a guest, or delete your account in Settings (or on the delete-account page).</td></tr>
 <tr><td><b>Buying Elite or coins (website and other-store builds only)</b></td><td>Yes</td><td>Lemon Squeezy, which sells it to you, and our purchase server</td><td>You pay on Lemon Squeezy’s own page: we never see your card. The app sends the licence key and an anonymous holder ID to unlock the purchase.</td><td>Do not buy. The Google Play version sells nothing.</td></tr>
-<tr><td><b>Checking for an app update (the website APK only)</b></td><td>Yes</td><td>Our purchase server (Cloudflare)</td><td>A request for the latest version number.</td><td>Update by hand from the website instead.</td></tr>
+<tr><td><b>Checking for an app update, and the store’s prices (the website APK only)</b></td><td>Yes, but only once you have allowed the internet for the news</td><td>Our purchase server (Cloudflare)</td><td>A request for the latest version number.</td><td>Update by hand from the website instead.</td></tr>
+<tr><td><b>Crash reports</b></td><td>Only if you turn them on, and only when the app crashes</td><td>Google (Firebase Crashlytics)</td><td>Where the app broke, the phone model and the Android and app versions, with a random installation ID. Never your account, email, lessons or chats.</td><td>Leave “Send crash reports” off (Settings → Privacy and data). It is off until you turn it on.</td></tr>
 <tr><td><b>Keeping fake copies of the app away</b></td><td>Yes</td><td>Google (App Check)</td><td>A device integrity token.</td><td>It cannot be turned off: it protects the shared database.</td></tr>
     </table>
     </div>
     <p>More on the assistant: <a href="/cyberai.html">What CyberAi does</a>.</p>
     <h2>What no feature does</h2>
-    <p>The app does not ask for your location, contacts, camera, microphone, photos, call log or SMS. Your lesson progress, your code and your phone checks stay on your phone.</p>
+    <p>The app does not ask for your location, contacts, camera, microphone, photos, call log or SMS. Your code and your phone checks stay on your phone; so does your lesson progress, unless you have a verified account (then it is also kept with the account).</p>
     <h2>Questions</h2>
     <p>Write to <a href="mailto:support@cybersecprotocol.app">support@cybersecprotocol.app</a>.</p>
   </div>
