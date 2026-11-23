@@ -252,7 +252,15 @@
     // the walking dot
     var dot = sv("circle", { r: 7, fill: "var(--accent)", stroke: "#fff", "stroke-width": 2 }); tm.appendChild(dot);
     var p0 = tm.querySelector(".road"), len = p0.getTotalLength();
-    if (!reduce) { var t0 = performance.now(); (function walk(t) { var f = ((t - t0) / 14000) % 1, p = p0.getPointAtLength(f * len); dot.setAttribute("cx", p.x); dot.setAttribute("cy", p.y); requestAnimationFrame(walk); })(t0); }
+    if (!reduce) {
+      // The dot walks only while the map is on screen (a loop that never stops keeps a phone busy), about 30 frames a second.
+      var t0 = performance.now(), seen = true, last = 0;
+      (function walk(t) {
+        if (seen && t - last > 32) { last = t; var f = ((t - t0) / 14000) % 1, p = p0.getPointAtLength(f * len); dot.setAttribute("cx", p.x); dot.setAttribute("cy", p.y); }
+        requestAnimationFrame(walk);
+      })(t0);
+      if ("IntersectionObserver" in window) new IntersectionObserver(function (en) { seen = en[0].isIntersecting; }).observe(tm);
+    }
     else { var p = p0.getPointAtLength(0); dot.setAttribute("cx", p.x); dot.setAttribute("cy", p.y); }
   }
 
