@@ -46,10 +46,14 @@
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    // The fade starts a little BEFORE a block reaches the screen: started once it was already on screen (and
+    // after a stagger), a quick swipe showed empty space between sections that filled in a moment later.
+    }, { threshold: 0, rootMargin: "0px 0px 25% 0px" });
     $$(".card, .tile, .stat, .tl, .section-head, .reveal-me").forEach(function (n, i) {
-      n.classList.add("reveal"); n.style.setProperty("--d", (i % 4) * 70 + "ms"); io.observe(n);
+      n.classList.add("reveal"); n.style.setProperty("--d", (i % 3) * 40 + "ms"); io.observe(n);
     });
+    // If the browser never reports them (a paused tab, an in-app browser), nothing stays hidden.
+    setTimeout(function () { $$(".reveal:not(.in)").forEach(function (n) { if (n.getBoundingClientRect().top < innerHeight * 1.25) n.classList.add("in"); }); }, 1500);
   }
 
   // ── spotlight on cards, magnetic buttons ──
@@ -136,7 +140,6 @@
     ["🧠", "Free quiz", "Try ten questions", "/quiz.html", "test practice"],
     ["🗺️", "Learn cybersecurity", "A beginner guide", "/learn-cybersecurity.html", "guide beginner start"],
     ["🧭", "Basics roadmap", "What to learn first", "/cybersecurity-roadmap.html", "path steps"],
-    ["🎬", "Watch", "Short videos", "/watch.html", "video scam"],
     ["🤖", "CyberAi", "The study partner", "/cyberai.html", "ai gemini assistant chat"],
     ["🔒", "Privacy policy", "What we keep and why", "/privacy.html", "data"],
     ["🌐", "Internet use", "When the app uses the internet", "/internet.html", "network"],

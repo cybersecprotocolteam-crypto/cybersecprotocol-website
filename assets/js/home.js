@@ -47,8 +47,20 @@
   var chips = $$(".chip-link");
   if (chips.length && "IntersectionObserver" in window) {
     var map = {}; chips.forEach(function (c) { map[c.getAttribute("href").slice(1)] = c; });
+    // The lit chip is brought to the middle of its strip by scrolling the strip alone. scrollIntoView here also
+    // asked the page to scroll, which stopped a swipe in progress: the page froze for a moment at each new section.
+    var strip = chips[0].parentElement, lit = null;
     var spy = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { chips.forEach(function (c) { c.classList.remove("on"); }); var c = map[e.target.id]; if (c) { c.classList.add("on"); c.scrollIntoView({ inline: "center", block: "nearest" }); } } });
+      es.forEach(function (e) {
+        var c = e.isIntersecting && map[e.target.id];
+        if (!c || c === lit) return;
+        if (lit) lit.classList.remove("on");
+        lit = c; c.classList.add("on");
+        if (strip.scrollWidth > strip.clientWidth) {
+          var sr = strip.getBoundingClientRect(), cr = c.getBoundingClientRect();
+          strip.scrollTo({ left: strip.scrollLeft + (cr.left - sr.left) - (sr.width - cr.width) / 2, behavior: reduce ? "auto" : "smooth" });
+        }
+      });
     }, { rootMargin: "-30% 0px -60% 0px" });
     Object.keys(map).forEach(function (id) { var s = doc.getElementById(id); if (s) spy.observe(s); });
   }
@@ -268,8 +280,19 @@
   var tl = $(".timeline");
   if (tl) {
     var fill = $(".fill", tl), steps = $$(".tl", tl);
-    function tlUpdate() { var r = tl.getBoundingClientRect(), p = Math.max(0, Math.min(1, (innerHeight * 0.6 - r.top) / r.height)); fill.style.height = p * 100 + "%"; steps.forEach(function (s) { s.classList.toggle("on", s.getBoundingClientRect().top < innerHeight * 0.62); }); }
-    addEventListener("scroll", tlUpdate, { passive: true }); tlUpdate();
+    // Once a frame at most, and only while the timeline is near the screen: measuring it on every scroll event
+    // made the browser lay the page out again and again while scrolling. The fill grows by scale, not height.
+    var near = true, queued = false;
+    function tlUpdate() {
+      queued = false;
+      var r = tl.getBoundingClientRect(), p = Math.max(0, Math.min(1, (innerHeight * 0.6 - r.top) / r.height));
+      var tops = steps.map(function (s) { return s.getBoundingClientRect().top; });
+      fill.style.transform = "scaleY(" + p + ")";
+      steps.forEach(function (s, i) { s.classList.toggle("on", tops[i] < innerHeight * 0.62); });
+    }
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (en) { near = en[0].isIntersecting; if (near) tlUpdate(); }, { rootMargin: "200px 0px" }).observe(tl);
+    addEventListener("scroll", function () { if (near && !queued) { queued = true; requestAnimationFrame(tlUpdate); } }, { passive: true });
+    tlUpdate();
   }
 
   // ── the quick quiz ──
@@ -302,5 +325,5 @@
 
   // ── the bar on small screens, once the hero has scrolled away ──
   var mb = $(".mobile-bar");
-  if (mb) addEventListener("scroll", function () { mb.classList.toggle("on", scrollY > 900); }, { passive: true });
+  if (mb) { var mbOn = false; addEventListener("scroll", function () { var on = scrollY > 900; if (on !== mbOn) { mbOn = on; mb.classList.toggle("on", on); } }, { passive: true }); }
 })();
