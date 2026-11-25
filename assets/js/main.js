@@ -8,7 +8,7 @@ const RELEASE = {
   apk: "/download/cybersec-protocol.apk",
   // Fill these in when the signed APK is published (see the website README).
   sizeMb: "9.5",
-  sha256: "289cb2b5e7681618b38b5829d5664f9905160d78899d6c599eae16e74695c681",
+  sha256: "2506def589e490a3756d4eb3cdad0e313a737dfa758cbba3b825a33c4dc4a121",
   certSha256: "adcef5eb79e6016ecd49b3510d6d3abbe40556338ef6b6899a9ba79bd8e0370e",
   minAndroid: "Android 8.0 or newer",
   apkReady: true,
@@ -16,7 +16,7 @@ const RELEASE = {
   playLive: false,
 };
 
-// Checkout links, filled in once the Lemon Squeezy products exist. Empty = "soon".
+// Checkout links, filled in once the Creem products exist. Empty = "soon".
 const CHECKOUT = {
   elite_month: "", elite_year: "",
   vault_small: "", vault_big: "", vault_mega: "",
